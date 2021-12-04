@@ -3,7 +3,7 @@
 
 int	main() {
 
-	Sample instance;
+	Sample instance; //class instantation
 	
 	instance.foo = 42;
 	std::cout << "instance foo: " << instance.foo << std::endl;
