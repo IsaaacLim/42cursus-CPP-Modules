@@ -13,4 +13,7 @@ int main()
 	// instance._privateFoo = 42;
 	// std::cout << "instance._privateFoo: " << instance._privateFoo << std::endl;
 	// instance._privateBar();
+
+	//Structs
+	Sample2 instance2;
 }

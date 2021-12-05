@@ -36,3 +36,17 @@ void Sample::_privateBar(void) const
 	std::cout << "Member function _privateBar called" << std::endl;
 	return;
 }
+
+//Struct
+Sample2::Sample2(void)
+{
+	std::cout << "Struct constructor called" << std::endl;
+	return;
+}
+
+Sample2::~Sample2(void)
+{
+	std::cout << "Struct destructor called" << std::endl;
+	return;
+}
+
