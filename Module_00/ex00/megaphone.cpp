@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Megaphone.class.hpp"
+#include "ClassMegaphone.hpp"
 
 int main(int argc, char *argv[])
 {

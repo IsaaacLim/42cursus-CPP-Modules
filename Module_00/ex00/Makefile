@@ -1,6 +1,6 @@
 NAME		=	megaphone
 
-SRCS		=	Megaphone.class.cpp megaphone.cpp
+SRCS		=	ClassMegaphone.cpp megaphone.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
 CXX			=	c++
@@ -11,7 +11,7 @@ all : $(NAME)
 $(NAME) : $(OBJS) 
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o : %.cpp Megaphone.class.hpp
+%.o : %.cpp ClassMegaphone.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

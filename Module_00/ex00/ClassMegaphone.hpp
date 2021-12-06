@@ -1,5 +1,5 @@
-#ifndef MEGAPHONE_CLASS_HPP
-#define MEGAPHONE_CLASS_HPP
+#ifndef CLASSMEGAPHONE_HPP
+#define CLASSMEGAPHONE_HPP
 
 class Megaphone
 {
