@@ -42,25 +42,21 @@ bool Contacts::setLastName(std::string str)
 	return (true);
 }
 
-std::string Contacts::getNickName(void) const
-{
-	return this->_nickName;
-}
-
-void Contacts::setNickName(std::string str)
-{
-	this->_nickName = str;
-	return;
-}
-
-int Contacts::getNumber(void) const
+std::string Contacts::getNumber(void) const
 {
 	return this->_number;
 }
 
-bool Contacts::setNumber(int num)
+bool Contacts::setNumber(std::string num)
 {
-	if (num >= 0)
-		this->_number = num;
+	for (int i = 0; num[i]; i++)
+	{
+		if (!isdigit(num[i]))
+		{
+			std::cout << "Only numbers accepted" << std::endl;
+			return (false);
+		}
+	}
+	this->_number = num;
 	return (true);
 }
