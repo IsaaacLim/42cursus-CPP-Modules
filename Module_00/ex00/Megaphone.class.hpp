@@ -4,11 +4,9 @@
 class Megaphone
 {
 public:
-	int foo;
-
 	Megaphone(void);
 	~Megaphone(void);
 
-	void bar(void) const;
+	void ft_toupper(char *str[]) const;
 };
 #endif
