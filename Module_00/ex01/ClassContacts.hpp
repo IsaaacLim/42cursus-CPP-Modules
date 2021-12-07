@@ -1,5 +1,5 @@
-#ifndef CLASS_CONTACTS_HPP
-#define CLASS_CONTACTS_HPP
+#ifndef CLASSCONTACTS_HPP
+#define CLASSCONTACTS_HPP
 
 #include <iostream>
 #include <ctype.h>
@@ -32,4 +32,7 @@ private:
 	std::string _lastName;
 	std::string _number;
 };
+
+Contacts ft_add();
+void ft_search(Contacts contact[MAX_CONTACTS]);
 #endif
