@@ -35,4 +35,5 @@ private:
 
 Contacts ft_add();
 void ft_search(Contacts contact[MAX_CONTACTS]);
+
 #endif

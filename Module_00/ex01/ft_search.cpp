@@ -7,9 +7,8 @@ static std::string ft_truncate(std::string str)
 	return (str);
 }
 
-void ft_search(Contacts contact[MAX_CONTACTS])
+static void ft_displaybook(Contacts contact[MAX_CONTACTS])
 {
-	int idx = 0;
 	std::string firstName;
 	std::string lastName;
 	std::string nickName;
@@ -28,6 +27,13 @@ void ft_search(Contacts contact[MAX_CONTACTS])
 		nickName = (nickName.length() > WIDTH) ? ft_truncate(nickName) : nickName;
 		std::cout << "|" << std::setw(WIDTH) << nickName << "|" << std::endl;
 	}
+}
+
+void ft_search(Contacts contact[MAX_CONTACTS])
+{
+	int idx = 0;
+
+	ft_displaybook(contact);
 	std::cout << "Entry index\t: ";
 	do
 	{
