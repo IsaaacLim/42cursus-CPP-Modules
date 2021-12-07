@@ -2,5 +2,9 @@ a.out
 *.o
 
 # Executables
+#Module00
 megaphone
 phonebook
+globalbanksters
+logfile_mine.log
+logfile_diff.log
