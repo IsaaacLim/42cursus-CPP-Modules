@@ -29,6 +29,10 @@ static void ft_displaybook(Contacts contact[MAX_CONTACTS])
 	}
 }
 
+/*
+** Infinate loop if cin with a letter
+**	fix: https://stackoverflow.com/questions/19521320/why-do-i-get-an-infinite-loop-if-i-enter-a-letter-rather-than-a-number
+*/
 void ft_search(Contacts contact[MAX_CONTACTS])
 {
 	int idx = 0;
