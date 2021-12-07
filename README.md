@@ -14,3 +14,5 @@ Tutorial-D00-comparison
        > awk -F ' ' '{print $2}' <file_name> [link](https://unix.stackexchange.com/questions/136884/how-to-use-a-shell-command-to-only-show-the-first-column-and-last-column-in-a-te#:~:text=awk%20%2DF%20%27%7C%27%20%27%7Bprint%20%241%2C%20%24NF%7D%27%20logfile)
 
        > comm -3 <file_1> <file_2> [link](<https://stackoverflow.com/questions/4544709/compare-two-files-line-by-line-and-generate-the-difference-in-another-file#:~:text=diff(1)%20is%20not%20the%20answer%2C%20but%20comm(1)%20is.>)
+
+    3. Destructor call order: "Its the implementation of std::vector, which apparently has different orders of destroying its content depending on the os/compiler." [link](https://42born2code.slack.com/archives/CN9RHKQHW/p1635162421031100)
