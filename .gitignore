@@ -1,5 +1,6 @@
 a.out
 *.o
 
-# ex00
+# Executables
 megaphone
+phonebook
