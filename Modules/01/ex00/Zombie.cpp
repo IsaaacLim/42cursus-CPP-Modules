@@ -2,7 +2,8 @@
 
 Zombie::Zombie(std::string name) : _name(name)
 {
-	this->_announce();
+	Zombie::_announce();
+	// this->_announce(); //works the same (not sure why)
 	return;
 }
 
