@@ -1,6 +1,10 @@
 a.out
 *.o
 
+# Tutorials
+#D01
+Tutorials/D01/filestreams/test.out
+Tutorials/D01/filestreams/numbers
 # Executables
 #Module00
 megaphone
