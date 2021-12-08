@@ -12,7 +12,7 @@ void HumanB::attack(void) const
 	std::cout << this->_name << " attack with his " << *this->_weapon << std::endl;
 }
 
-void HumanB::setWeapon(const Weapon &club)
+void HumanB::setWeapon(Weapon &club)
 {
 	this->_weapon = &club.getType();
 }

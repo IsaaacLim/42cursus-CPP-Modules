@@ -16,7 +16,7 @@ public:
 
 	void attack(void) const;
 
-	void setWeapon(const Weapon &club);
+	void setWeapon(Weapon &club);
 };
 
 #endif
