@@ -1,5 +1,8 @@
 #include "HumanA.hpp"
 
+/*
+** Setting weapon through Reference
+*/
 HumanA::HumanA(std::string name, Weapon &club) : _name(name), _weapon(club.getType())
 {
 	return;

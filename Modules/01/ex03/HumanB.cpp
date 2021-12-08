@@ -1,5 +1,8 @@
 #include "HumanB.hpp"
 
+/*
+** Setting weapon through pointer
+*/
 HumanB::HumanB(std::string name) : _name(name)
 {
 	return;
