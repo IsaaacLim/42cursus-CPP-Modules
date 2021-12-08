@@ -6,7 +6,7 @@ OBJS		= 	$(SRCS:.cpp=.o)
 CXX			=	c++
 CXXFLAGS	=	-std=c++98 -pedantic-errors -Wall -Wextra -Werror
 
-all: $(NAME)
+all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
