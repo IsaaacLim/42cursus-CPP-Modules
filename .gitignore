@@ -1,3 +1,5 @@
+.vscode
+
 a.out
 *.o
 
@@ -15,3 +17,4 @@ logfile2.log
 
 #Module01
 brainz
+human
