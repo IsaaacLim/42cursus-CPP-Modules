@@ -4,7 +4,7 @@ SRCS		=	main.cpp	newZombie.cpp	randomChump.cpp		Zombie.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
 CXX			=	c++
-CXXFLAGS	=	-std=c++98 -pedantic-errors -Wall -Wextra -Werror
+CXXFLAGS	=	-std=c++98 -pedantic-errors -Wall -Wextra -Werror -g
 
 all : $(NAME)
 
