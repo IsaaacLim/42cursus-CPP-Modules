@@ -18,14 +18,14 @@ Karen::~Karen(void) { return; }
 void Karen::_debug(void)
 {
 	std::cout << "DEBUG\t: I love to get extra bacon for my";
-	std::cout << " 7XL-double-cheese-tiple-pickle-special-ketchup burger.";
+	std::cout << " 7XL-double-cheese-triple-pickle-special-ketchup burger.";
 	std::cout << " I just love it!" << std::endl;
 	return;
 }
 
 void Karen::_info(void)
 {
-	std::cout << "INFO\t: I cannot believe adding extrta bacon cost more money.";
+	std::cout << "INFO\t: I cannot believe adding extra bacon cost more money.";
 	std::cout << " You don't put enough!";
 	std::cout << " If you did I would not have to ask for it!" << std::endl;
 	return;
@@ -33,8 +33,8 @@ void Karen::_info(void)
 
 void Karen::_warning(void)
 {
-	std::cout << "WARNING\t: I think I deserve to ahve some extra bacon for free.";
-	std::cout << " I've bee coming here for years and";
+	std::cout << "WARNING\t: I think I deserve to have some extra bacon for free.";
+	std::cout << " I've been coming here for years and";
 	std::cout << " you just started working here last month" << std::endl;
 	return;
 }
