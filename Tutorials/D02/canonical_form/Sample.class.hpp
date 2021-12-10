@@ -11,7 +11,7 @@
 **	1. Default constructor
 **	2. Copy of the constructor: constructor taking in a parameter (an instance we're defining) to make a copy of this class
 **	3. Destructor
-**	4. Equals (=) assignment operator: alloing us to make assignments from this class
+**	4. Equals (=) assignment operator overload: alloing us to make assignments from this class
 */
 class Sample
 {
@@ -24,7 +24,7 @@ public:
 	Sample(Sample const &src); // Canonical (copy of the constructor)
 	~Sample();				   // Canonical (destructor)
 
-	Sample &operator=(Sample const &rhs); // Canonical (equals assingment operator)
+	Sample &operator=(Sample const &rhs); // Canonical (equals assignment operator overload)
 
 	int getFoo(void) const;
 };
