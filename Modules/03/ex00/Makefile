@@ -1,0 +1,25 @@
+NAME		=	fixed
+
+SRCS		=	ClapTrap.cpp	main.cpp
+OBJS		=	$(SRCS:.cpp=.o)
+
+CXX			=	c++
+CXXFLAGS	=	-std=c++98 -pedantic-errors -Wall -Werror -Wextra
+
+all : $(NAME)
+
+$(NAME) : $(OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+%.o : %.cpp ClapTrap.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean :
+	rm -f $(OBJS)
+
+fclean : clean
+	rm -f $(NAME)
+
+re : fclean all
+
+.PHONY : all clean fclean re
