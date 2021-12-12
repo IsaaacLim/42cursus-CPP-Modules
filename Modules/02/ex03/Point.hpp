@@ -6,6 +6,7 @@
 
 class Point
 {
+	//Supposed to be const but can't initialize then
 private:
 	Fixed _x;
 	Fixed _y;
