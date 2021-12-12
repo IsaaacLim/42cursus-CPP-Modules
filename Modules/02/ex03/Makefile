@@ -1,4 +1,4 @@
-NAME		=	fixed
+NAME		=	bsp
 
 SRCS		=	bsp.cpp		Fixed.cpp	main.cpp	Point.cpp
 OBJS		=	$(SRCS:.cpp=.o)
