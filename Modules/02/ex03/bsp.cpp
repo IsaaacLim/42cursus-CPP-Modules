@@ -1,5 +1,8 @@
 #include "Point.hpp"
 
+/*
+** Ref: https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
+*/
 Fixed ft_area(Point const a, Point const b, Point const c)
 {
 	Fixed area1 = a.getX() * (b.getY() - c.getY());
