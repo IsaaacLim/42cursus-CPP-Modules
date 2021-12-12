@@ -11,7 +11,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o : %.cpp Fixed.hpp
+%.o : %.cpp Fixed.hpp Point.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :
