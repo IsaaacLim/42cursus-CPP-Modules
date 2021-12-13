@@ -3,15 +3,6 @@
 ClapTrap::ClapTrap(void)
 {
 	std::cout << "ClapTrap: Default constructor called" << std::endl;
-	this->_name = "UNKNOWN";
-	this->_hitPoints = 10;
-	this->_energyPoints = 10;
-	this->_attackDamage = 10;
-
-	std::cout << "Character Info:\n\tName\t\t: " << this->_name << std::endl;
-	std::cout << "\tHitPoints\t: " << this->_hitPoints << std::endl;
-	std::cout << "\tEnergyPoints\t: " << this->_energyPoints << std::endl;
-	std::cout << "\tAttackDamage\t: " << this->_attackDamage << std::endl;
 	return;
 }
 
