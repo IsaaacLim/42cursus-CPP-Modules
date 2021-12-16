@@ -7,9 +7,9 @@ DiamondTrap::DiamondTrap(void)
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _privateName(name)
 {
-	this->_hitPoints = this->FragTrap::_hitPoints;		 //not
-	this->_energyPoints = this->ScavTrap::_energyPoints; //setting
-	this->_attackDamage = this->FragTrap::_attackDamage; //correctly
+	this->_hitPoints = FragTrap::_hitPoints;		 //not
+	this->_energyPoints = ScavTrap::_energyPoints; //setting
+	this->_attackDamage = FragTrap::_attackDamage; //correctly
 	std::cout << "DiamondTrap: Constructor with 'name' parameter called" << std::endl;
 	std::cout << "Character Info:\n\tName\t\t: " << this->_privateName << std::endl;
 	std::cout << "\tHitPoints\t: " << this->_hitPoints << std::endl;
@@ -41,6 +41,11 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
 		this->_attackDamage = rhs.getAttackDamage();
 	}
 	return *this;
+}
+
+void DiamondTrap::attack(std::string const &target)
+{
+	ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI(void)

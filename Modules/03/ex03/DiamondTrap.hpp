@@ -18,12 +18,11 @@ public:
 
 	DiamondTrap &operator=(DiamondTrap const &rhs);
 
+	void attack(std::string const &target);
 	void whoAmI(void);
 
 	std::string getPrivateName(void) const;
 	void setPrivateName(std::string name);
-
-	//attack() from scavtrap
 };
 
 #endif

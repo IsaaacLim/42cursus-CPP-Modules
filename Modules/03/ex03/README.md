@@ -6,5 +6,4 @@ Inheritance
 
 # To Do:
 
-- include attack function for FragTrap, ScavTrap and DiamondTrap
-- DiamondTrap: Fix attributes variables taken from different parent classes
+- DiamondTrap: Fix attributes variables taken from different parent classes. *(Solution used: declare individual protected variables for ScavTrap and FragTrap classes)*
