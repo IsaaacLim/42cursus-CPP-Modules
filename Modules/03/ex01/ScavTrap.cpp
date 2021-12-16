@@ -45,6 +45,14 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
 	return *this;
 }
 
+void ScavTrap::attack(std::string const &target)
+{
+	std::cout << "ScavTrap: " << this->_name << " attack " << target;
+	std::cout << ", causing " << this->_attackDamage << " points of damage!";
+	std::cout << std::endl;
+	return;
+}
+
 void ScavTrap::guardGate(void)
 {
 	std::cout << "ScavTrap: " << this->_name;
