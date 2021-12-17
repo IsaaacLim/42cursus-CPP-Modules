@@ -13,6 +13,7 @@ using namespace std;
 **	Classes derived from class with PVF MUST override that function.
 **
 ** Abstract class: A class with only pure virtual functions in it.
+**	Also known as Interface
 */
 class Enemy
 {
