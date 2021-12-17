@@ -12,9 +12,9 @@ private:
 
 public:
 	Cat(void);
-	Cat(const Cat &cat);
+	Cat(const Cat &other);
 	~Cat(void);
-	Cat &operator=(const Cat &cat);
+	Cat &operator=(const Cat &rhs);
 
 	void makeSound(void) const;
 	Brain *getBrain(void) const;

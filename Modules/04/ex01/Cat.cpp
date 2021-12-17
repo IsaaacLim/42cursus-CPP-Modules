@@ -7,9 +7,9 @@ Cat::Cat(void)
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat &cat) : Animal()
+Cat::Cat(const Cat &other) : Animal()
 {
-	*this = cat;
+	*this = other;
 	std::cout << "Cat\t: Copy constructor\n";
 }
 
@@ -20,9 +20,9 @@ Cat::~Cat(void)
 }
 
 //Somehow With/Without get__() works the same (?)
-Cat &Cat::operator=(const Cat &cat)
+Cat &Cat::operator=(const Cat &rhs)
 {
-	this->type = cat.getType();
+	this->type = rhs.getType();
 	// this->_brain = cat.getBrain();
 	// *this->_brain = *(cat.getType());
 	std::cout << "Cat\t: Assignment operator\n";

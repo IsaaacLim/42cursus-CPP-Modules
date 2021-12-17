@@ -12,9 +12,9 @@ private:
 
 public:
 	Dog(void);
-	Dog(const Dog &dog);
+	Dog(const Dog &other);
 	~Dog(void);
-	Dog &operator=(const Dog &dog);
+	Dog &operator=(const Dog &rhs);
 
 	void makeSound(void) const;
 	Brain *getBrain(void) const;
