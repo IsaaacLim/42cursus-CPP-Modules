@@ -3,6 +3,8 @@
 using namespace std;
 
 /*
+** Ref: https://youtu.be/ndz3EHpFEZc
+**
 ** Virtual: Since the function is virtual, it goes back down to see what the Enemy
 **	class variable is pointing to.
 **
