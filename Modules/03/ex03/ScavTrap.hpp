@@ -6,8 +6,13 @@
 
 class ScavTrap : virtual public ClapTrap
 {
-private:
-	/* data */
+	//Will create ambiguity for DiamondTrap
+protected:
+	// std::string _name;
+	// int _hitPoints;
+	// int _energyPoints;
+	// int _attackDamage;
+
 public:
 	ScavTrap(void);
 	ScavTrap(std::string name);
