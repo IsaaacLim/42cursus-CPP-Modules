@@ -12,8 +12,9 @@ using namespace std;
 **	for the child to inherit it. It has no implementation (body). It doesn't do anything
 **	Classes derived from class with PVF MUST override that function.
 **
-** Abstract class: A class with only pure virtual functions in it.
-**	Also known as Interface
+** Abstract class: A class with virtual functions to be overridden.
+**
+** Interfaces class: A class with only pure virtual functions in it.
 */
 class Enemy
 {
