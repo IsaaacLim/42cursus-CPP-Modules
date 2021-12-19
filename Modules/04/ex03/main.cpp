@@ -41,4 +41,5 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+	system("leaks interface");
 }
