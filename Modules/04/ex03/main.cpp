@@ -31,24 +31,6 @@ int main()
 	me->use(3, *bob);
 	me->use(4, *bob);
 
-	std::cout << "\n---------- DEEP COPY TEST ----------\n";
-	Character *ori = new Character("Ori");
-	Character *copy = new Character();
-	ori->equip(tmp);
-	*copy = *ori;
-	std::cout << "Copy-> ";
-	copy->use(0, *bob);
-	std::cout << "Ori.-> ";
-	ori->use(0, *bob);
-
-	std::cout << "Copy-> ";
-	copy->unequip(0);
-
-	std::cout << "Copy-> ";
-	copy->use(0, *bob);
-	std::cout << "Ori.-> ";
-	ori->use(0, *bob);
-
 	std::cout << "\n---------- UNEQUIPPING MATERIAS----------\n";
 	me->unequip(0);
 	me->unequip(1);
@@ -56,10 +38,30 @@ int main()
 	me->unequip(-1);
 
 	std::cout << "\n---------- EXITING DEFAULT PROGRAM ----------\n";
-	delete ori;
-	delete copy;
 	delete bob;
 	delete me;
 	delete src;
+
+	// std::cout << "\n---------- DEEP COPY TEST ----------\n";
+	// Character *ori = new Character("Ori");
+	// Character *copy = new Character();
+	// ori->equip(tmp);
+	// *copy = *ori;
+	// std::cout << "Copy-> ";
+	// copy->use(0, *bob);
+	// std::cout << "Ori.-> ";
+	// ori->use(0, *bob);
+
+	// std::cout << "Copy-> ";
+	// copy->unequip(0);
+
+	// std::cout << "Copy-> ";
+	// copy->use(0, *bob);
+	// std::cout << "Ori.-> ";
+	// ori->use(0, *bob);
+
+	// delete ori;
+	// delete copy;
+
 	// system("leaks interface");
 }
