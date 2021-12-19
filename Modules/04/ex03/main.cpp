@@ -47,13 +47,14 @@ int main()
 	std::cout << "Ori.-> ";
 	ori->use(0, *bob);
 
+	tmp = src->createMateria("ice");
 	std::cout << "Copy-> ";
-	// copy->unequip(0);
+	copy->equip(tmp);
 
 	std::cout << "Copy-> ";
-	copy->use(0, *bob);
+	copy->use(1, *bob);
 	std::cout << "Ori.-> ";
-	ori->use(0, *bob);
+	ori->use(1, *bob);
 
 	std::cout << "\n---------- EXITING PROGRAM ----------\n";
 	delete ori;
