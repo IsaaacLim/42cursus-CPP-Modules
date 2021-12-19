@@ -35,8 +35,8 @@ Character &Character::operator=(const Character &rhs)
 	this->_equipped = 0;
 	for (int i = 0; i < rhs._equipped; i++)
 		this->equip(rhs._materias[i]->clone());
-	for (int i = this->_equipped; i < SKILL_AMOUNT; i++)
-		this->_materias[i] = NULL;
+	// for (int i = this->_equipped; i < SKILL_AMOUNT; i++)
+	// this->_materias[i] = NULL;
 	std::cout << "Character\t: Assignation operator\n";
 	return *this;
 }
