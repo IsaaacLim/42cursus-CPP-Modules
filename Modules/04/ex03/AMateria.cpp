@@ -25,7 +25,7 @@ AMateria &AMateria::operator=(const AMateria &rhs)
 void AMateria::use(ICharacter &target)
 {
 	(void)target;
-	std::cout << "-AMateria use function needs to be overriden-\n";
+	std::cout << BLUE "-AMateria use function needs to be overriden-\n" RESET;
 }
 
 std::string const &AMateria::getType(void) const { return this->type; }
