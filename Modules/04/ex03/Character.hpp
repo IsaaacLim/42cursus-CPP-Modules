@@ -8,14 +8,13 @@
 class Character : public ICharacter
 {
 private:
-	Character(void); //not going to use this
-
 	AMateria *_materias[SKILL_AMOUNT];
 	std::string _name;
 	int _equipped;
 
 public:
 	//Canonical form
+	Character(void);
 	Character(std::string const &name);
 	Character(const Character &other);
 	~Character(void);

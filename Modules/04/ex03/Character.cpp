@@ -1,5 +1,12 @@
 #include "Character.hpp"
 
+Character::Character(void) : _equipped(0)
+{
+	for (int i = 0; i < SKILL_AMOUNT; i++)
+		this->_materias[i] = NULL;
+	std::cout << "Character\t: Default constructor\n";
+}
+
 Character::Character(std::string const &name) : _name(name), _equipped(0)
 {
 	for (int i = 0; i < SKILL_AMOUNT; i++)
@@ -15,14 +22,9 @@ Character::Character(const Character &other)
 
 Character::~Character(void)
 {
-	std::cout << BLUE "DELETING\n"; //////////
 	for (int i = 0; i < this->_equipped; i++)
-	{
-
-		std::cout << this->_materias[i]->getType() << " "; /////////////
 		delete this->_materias[i];
-	}
-	std::cout << "Character\t: Destructor" RESET << std::endl; //////////
+	std::cout << "Character\t: Destructor" << std::endl;
 }
 
 Character &Character::operator=(const Character &rhs)
@@ -76,6 +78,7 @@ void Character::unequip(int idx)
 	else
 	{
 		std::cout << GREEN "Character\t: Unequipped " << this->_materias[idx]->getType() << "\n" RESET;
+		// delete this->_materias[idx];
 		if (idx == SKILL_AMOUNT - 1)
 			this->_materias[idx] = NULL;
 		for (; idx < SKILL_AMOUNT - 1; idx++)

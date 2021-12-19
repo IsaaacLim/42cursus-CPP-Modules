@@ -10,10 +10,6 @@ MateriaSource::MateriaSource(void) : _learned(0)
 MateriaSource::MateriaSource(const MateriaSource &other) : _learned(0)
 {
 	*this = other;
-	// for (int i = 0; i < other._learned; i++)
-	// 	this->learnMateria(other._materias[i]->clone());
-	// for (int i = 0; i < SKILL_AMOUNT; i++) //?
-	// 	this->_materias[i] = NULL;		   //?
 	std::cout << "MSource\t\t: Copy constructor\n";
 }
 
@@ -31,8 +27,6 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 	this->_learned = 0;
 	for (int i = 0; i < rhs._learned; i++)
 		this->learnMateria(rhs._materias[i]->clone());
-	for (int i = 0; i < SKILL_AMOUNT; i++) //?
-		this->_materias[i] = NULL;		   //?
 	std::cout << "MSource\t\t: Assignmation operator\n";
 	return *this;
 }
@@ -56,18 +50,14 @@ void MateriaSource::learnMateria(AMateria *skill)
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
-	AMateria *new_materia = NULL;
-
 	for (int i = 0; i < _learned; i++)
 	{
 		if (type == _materias[i]->getType())
 		{
 			std::cout << GREEN "MSource\t\t: Created new materia\n" RESET;
-			// new_materia = _materias[i]->clone();
 			return (_materias[i]->clone());
 		}
 	}
-	if (!new_materia)
-		std::cout << RED "MSource\t\t: Failed to create materia\n" RESET;
-	return new_materia;
+	std::cout << RED "MSource\t\t: Failed to create materia\n" RESET;
+	return (NULL);
 }

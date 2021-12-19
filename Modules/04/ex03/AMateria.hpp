@@ -19,7 +19,6 @@ protected:
 
 public:
 	//Canonical form
-	//virtual these functions?
 	AMateria(void);
 	AMateria(std::string const &type);
 	AMateria(const AMateria &other);
