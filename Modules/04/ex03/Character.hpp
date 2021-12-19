@@ -22,7 +22,7 @@ public:
 	Character &operator=(const Character &rhs);
 
 	//Interface functions
-	std::string const &getName() const override;
+	std::string const &getName() const;
 	void equip(AMateria *m);
 	void unequip(int idx);
 	void use(int idx, ICharacter &target);

@@ -3,7 +3,7 @@
 Character::Character(std::string const &name) : _name(name), _equipped(0)
 {
 	for (int i = 0; i < SKILL_AMOUNT; i++)
-		this->_materias[i] = '\0';
+		this->_materias[i] = NULL;
 	std::cout << "Character\t: Constructor with 'name' parameter\n";
 }
 
@@ -43,17 +43,17 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx >= this->_equipped || this->_materias[idx] == '\0')
+	if (idx < 0 || idx >= this->_equipped || this->_materias[idx] == NULL)
 		std::cout << "Character\t: Skill doesn't exist, nothing to unequip\n";
 	else
 	{
 		std::cout << "Character\t: Unequipped " << this->_materias[idx]->getType() << "\n";
 		if (idx == SKILL_AMOUNT - 1)
-			this->_materias[idx] = '\0';
+			this->_materias[idx] = NULL;
 		for (; idx < SKILL_AMOUNT - 1; idx++)
 		{
 			this->_materias[idx] = this->_materias[idx + 1];
-			this->_materias[idx + 1] = '\0';
+			this->_materias[idx + 1] = NULL;
 		}
 		this->_equipped--;
 	}
@@ -61,7 +61,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-	if (idx < 0 || idx >= this->_equipped || this->_materias[idx] == '\0')
+	if (idx < 0 || idx >= this->_equipped || this->_materias[idx] == NULL)
 		std::cout << "Character\t: Skill doesn't exist, nothing to use\n";
 	else
 	{

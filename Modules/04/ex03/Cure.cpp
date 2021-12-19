@@ -2,7 +2,7 @@
 
 Cure::Cure(void) { std::cout << "Cure\t: Default constructor\n"; }
 
-Cure::Cure(const Cure &other)
+Cure::Cure(const Cure &other) : AMateria()
 {
 	*this = other;
 	std::cout << "Cure\t: Copy constructor";

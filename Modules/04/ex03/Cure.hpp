@@ -14,7 +14,7 @@ public:
 	Cure &operator=(const Cure &rhs);
 
 	AMateria *clone() const;
-	void use(ICharacter &target) override;
+	void use(ICharacter &target);
 };
 
 #endif

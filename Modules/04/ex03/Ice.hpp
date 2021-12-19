@@ -14,7 +14,7 @@ public:
 	Ice &operator=(const Ice &rhs);
 
 	AMateria *clone() const;
-	void use(ICharacter &target) override; //might not be able to use override
+	void use(ICharacter &target);
 };
 
 #endif
