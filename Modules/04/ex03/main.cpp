@@ -53,7 +53,7 @@ int main()
 	ori->use(0, *bob);
 
 	std::cout << "Copy-> ";
-	copy->unequip(0);
+	// copy->unequip(0);
 
 	std::cout << "Copy-> ";
 	copy->use(0, *bob);
