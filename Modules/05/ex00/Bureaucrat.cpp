@@ -4,12 +4,7 @@ Bureaucrat::Bureaucrat() { std::cout << "Default constructor\n"; }
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name), _grade(grade)
 {
-	if (this->_grade < 1)
-		throw Bureaucrat::GradeTooHighException();
-	else if (this->_grade > 150)
-		throw Bureaucrat::GradeTooLowException();
-	else
-		std::cout << "Constructor\n";
+	std::cout << "Constructor\n";
 }
 
 Bureaucrat::~Bureaucrat() { std::cout << "Destructor\n"; }
@@ -17,12 +12,7 @@ Bureaucrat::~Bureaucrat() { std::cout << "Destructor\n"; }
 Bureaucrat::Bureaucrat(Bureaucrat const &other)
 {
 	*this = other;
-	if (this->_grade < 1)
-		throw Bureaucrat::GradeTooHighException();
-	else if (this->_grade > 150)
-		throw Bureaucrat::GradeTooLowException();
-	else
-		std::cout << "Copy constructor\n";
+	std::cout << "Copy constructor\n";
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
