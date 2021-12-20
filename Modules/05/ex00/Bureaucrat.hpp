@@ -27,6 +27,7 @@ public:
 
 	class GradeTooLowException : public std::exception
 	{
+	public: //to allow main to catch this specific exception
 		virtual const char *what() const throw();
 	};
 
