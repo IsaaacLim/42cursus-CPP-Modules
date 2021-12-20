@@ -35,12 +35,12 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat const &instance)
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "*Grade Too High*\n";
+	return "*Grade Too High*";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "*Grade Too Low*\n";
+	return "*Grade Too Low*";
 }
 
 void Bureaucrat::incrementGrade(void)

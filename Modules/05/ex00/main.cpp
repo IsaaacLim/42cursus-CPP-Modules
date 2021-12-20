@@ -15,7 +15,7 @@ int main(void)
 		}
 		catch (const std::exception &e)
 		{
-			std::cerr << e.what();
+			std::cerr << jacob.getName() << ", " << e.what() << "\n";
 		}
 	}
 	std::cout << "\n";
@@ -29,11 +29,11 @@ int main(void)
 		catch (Bureaucrat::GradeTooLowException &e) //made public to allow specific catch
 		{
 			std::cerr << "beau-> ";
-			std::cerr << e.what();
+			std::cerr << mike.getName() << ", " << e.what() << "\n";
 		}
 		catch (std::exception &e)
 		{
-			std::cerr << e.what();
+			std::cerr << mike.getName() << ", " << e.what() << "\n";
 		}
 	}
 	std::cout << "\n";
