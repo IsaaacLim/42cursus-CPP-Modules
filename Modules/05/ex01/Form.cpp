@@ -58,19 +58,18 @@ void Form::beSigned(Bureaucrat const &person)
 	if (person.getGrade() > this->_gradeToSign)
 		throw Bureaucrat::GradeTooLowException(); //pdf requested for Form's exception but it doesn't make sense
 	else
-		// person.signForm(*this);
-		return;
+		person.signForm(*this);
 }
 
 std::ostream &operator<<(std::ostream &out, Form const &instance)
 {
-	out << "[" << instance.getFormName() << "] form\n";
-	out << "\tSigned?\t: ";
+	out << "\nForm information - [" << instance.getFormName() << "]\n";
+	out << "\tSigned?\t\t: ";
 	if (instance.getIsSigned())
 		out << "Yes\n";
 	else
 		out << "No\n";
 	out << "\tGrade to sign\t: " << instance.getGradeToSign() << "\n";
-	out << "\tGrade to execute\t: " << instance.getGradeToExecute() << "\n";
+	out << "\tGrade to execute: " << instance.getGradeToExecute() << "\n";
 	return out;
 }
