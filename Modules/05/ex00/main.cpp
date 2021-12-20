@@ -37,4 +37,26 @@ int main(void)
 		}
 	}
 	std::cout << "\n";
+	try
+	{
+		Bureaucrat molly("Molly", 0);
+		molly.decrementGrade();
+		std::cout << molly;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what();
+	}
+	std::cout << "\n";
+	try
+	{
+		Bureaucrat new_mike(mike);
+		new_mike.incrementGrade();
+		std::cout << new_mike;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what();
+	}
+	std::cout << "\n";
 }
