@@ -6,6 +6,8 @@ int main(void)
 	Bureaucrat mike("Mike", 148);
 
 	std::cout << "\n";
+
+	//Increment grade until it's too high
 	for (int i = 0; i < 4; i++)
 	{
 		try
@@ -19,6 +21,8 @@ int main(void)
 		}
 	}
 	std::cout << "\n";
+
+	//Decrement grade until it's too low
 	for (int i = 0; i < 4; i++)
 	{
 		try
@@ -37,6 +41,8 @@ int main(void)
 		}
 	}
 	std::cout << "\n";
+
+	//Instantiate unusable Bureaucrats
 	try
 	{
 		Bureaucrat molly("Molly", 0);
