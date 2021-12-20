@@ -66,6 +66,7 @@ void test3()
 		// throw(PEBKACException::exception()); //general exception
 		throw PEBKACException(); //specific exception
 	}
+	//without this exception, it still still be caught by the generic catch
 	catch (PEBKACException &e) //may be a specific catch
 	{
 		std::cerr << e.what() << "\n";
