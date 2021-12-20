@@ -42,7 +42,7 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat const &instance)
 	return out;
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw() //can make it std::cout?
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return "*Grade Too High*\n";
 }
