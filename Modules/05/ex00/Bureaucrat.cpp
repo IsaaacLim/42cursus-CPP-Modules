@@ -19,6 +19,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	// this->_name = rhs.getName(); name is const, can't be changed
 	this->_grade = rhs.getGrade();
+	std::cout << "Assignment operator\n";
 	return *this;
 }
 
