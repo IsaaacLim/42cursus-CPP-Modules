@@ -1,5 +1,6 @@
 // #include "Bureaucrat.hpp" //Causes class redefinition
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 #define RED "\033[0;31m"
 #define GREEN "\033[0;32m"
@@ -80,10 +81,8 @@ void ex00_test()
 	std::cout << "\n";
 }
 
-int main(void)
+void ex01_test()
 {
-	// ex00_test();
-
 	std::cout << YELLOW "\n========== EX01 TESTS ==========\n" RESET;
 	Bureaucrat mike("Mike", 50);
 	Form f_general("General", false, 100, 10);
@@ -138,4 +137,13 @@ int main(void)
 		std::cerr << e.what() << '\n';
 	}
 	std::cout << "\n";
+}
+
+int main()
+{
+	// ex00_test();
+	// ex01_test();
+
+	std::cout << YELLOW "\n========== EX02 TESTS ==========\n" RESET;
+	ShrubberyCreationForm("test");
 }
