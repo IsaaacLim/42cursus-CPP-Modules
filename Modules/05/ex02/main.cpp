@@ -145,5 +145,8 @@ int main()
 	// ex01_test();
 
 	std::cout << YELLOW "\n========== EX02 TESTS ==========\n" RESET;
-	ShrubberyCreationForm("test");
+	Bureaucrat mike("Mike", 148);
+	ShrubberyCreationForm test("test");
+
+	test.execute(mike);
 }

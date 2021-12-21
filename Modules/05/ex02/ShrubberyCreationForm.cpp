@@ -37,7 +37,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	(void)executor;
 	// Form::execute(executor);
-	std::string const outfileName = this->_target + "_shubbery";
+	std::string const outfileName = this->_target + "_shrubbery";
 	std::ofstream ofs;
 
 	ofs.open(outfileName.data(), std::ostream::out | std::ostream::app);
