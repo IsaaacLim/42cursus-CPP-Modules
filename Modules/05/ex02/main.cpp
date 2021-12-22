@@ -2,6 +2,7 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 #include <unistd.h>
 
@@ -169,6 +170,7 @@ int main()
 	Bureaucrat bigBoss("Big Boss", 5);
 	ShrubberyCreationForm shrubForm("shrub_tree");
 	RobotomyRequestForm roboForm("BrokenBot");
+	PresidentialPardonForm pardonForm("Defendant");
 
 	//Instances information
 	printLabel("Instances Info");
@@ -177,12 +179,15 @@ int main()
 	std::cout << bigBoss;
 	std::cout << shrubForm;
 	std::cout << roboForm;
+	std::cout << pardonForm;
 
 	//Form signing
 	printLabel("Form Signing");
 	signForm(&shrubForm, supervisor);
 	signForm(&roboForm, supervisor);
 	signForm(&roboForm, manager);
+	signForm(&pardonForm, manager);
+	signForm(&pardonForm, bigBoss);
 
 	printLabel("Form Execution Result");
 	try
@@ -206,6 +211,16 @@ int main()
 		}
 		sleep(1);
 	}
-
+	std::cout << "\n";
+	try
+	{
+		bigBoss.executeForm(pardonForm);
+		manager.executeForm(pardonForm);
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "Failed to pardon: ";
+		std::cerr << e.what() << '\n';
+	}
 	std::cout << "\n";
 }
