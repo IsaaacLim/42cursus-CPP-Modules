@@ -32,14 +32,14 @@ const char *ShrubberyCreationForm::FileWriteException::what() const throw()
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	Form::execute(executor); //test manual error with this error
+	Form::execute(executor);
 	std::string const outfileName = this->_target + "_shrubbery";
 	std::ofstream ofs;
 
 	ofs.open(outfileName.data(), std::ostream::out | std::ostream::app);
 	if (!ofs.is_open() || ofs.bad())
 		throw FileOpenException();
-	ofs << ShrubberyCreationForm::trees[2] << std::endl;
+	ofs << ShrubberyCreationForm::trees[1] << std::endl;
 	if (ofs.bad())
 	{
 		ofs.close();
@@ -54,17 +54,7 @@ std::string ShrubberyCreationForm::getTarget(void) const
 	return this->_target;
 }
 
-std::string const ShrubberyCreationForm::trees[3] = {
-	"      /\\\n"
-	"     /\\*\\\n"
-	"    /\\O\\*\\\n"
-	"   /*/\\/\\/\\\n"
-	"  /\\O\\/\\*\\/\\\n"
-	" /\\*\\/\\*\\/\\/\\\n"
-	"/\\O\\/\\/*/\\/O/\\\n"
-	"      ||\n"
-	"      ||\n"
-	"      ||\n",
+std::string const ShrubberyCreationForm::trees[2] = {
 	"           \\/ |    |/\n"
 	"        \\/ / \\||/  /_/___/_\n"
 	"         \\/   |/ \\/\n"

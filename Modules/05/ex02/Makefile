@@ -1,9 +1,11 @@
 NAME		=	bureaucrat
 
-SRCS		=	Bureaucrat.cpp		Form.cpp	main.cpp	ShrubberyCreationForm.cpp
+SRCS		=	Bureaucrat.cpp		Form.cpp	main.cpp	\
+				RobotomyRequestForm.cpp		ShrubberyCreationForm.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
-INCLUDES	=	Bureaucrat.hpp	Form.hpp	ShrubberyCreationForm.hpp
+INCLUDES	=	Bureaucrat.hpp	Form.hpp	RobotomyRequestForm.hpp		\
+				ShrubberyCreationForm.hpp
 
 CXX			=	c++
 CXXFLAGS	=	-std=c++98 -pedantic-errors -Wall -Wextra -Werror -g

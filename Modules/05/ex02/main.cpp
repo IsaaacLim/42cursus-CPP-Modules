@@ -1,6 +1,9 @@
 // #include "Bureaucrat.hpp" //Causes class redefinition
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+
+#include <unistd.h>
 
 #define RED "\033[0;31m"
 #define GREEN "\033[0;32m"
@@ -143,11 +146,15 @@ void signForm(Form *form, Bureaucrat penHolder)
 {
 	try
 	{
+		std::cout << "\n";
 		form->beSigned(penHolder);
+		std::cout << "\n";
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << penHolder.getName() << " couldn't sign [";
+		std::cerr << form->getFormName() << "] form: ";
+		std::cerr << e.what() << "\n\n";
 	}
 }
 
@@ -157,19 +164,25 @@ int main()
 	// ex01_test();
 
 	std::cout << YELLOW "\n========== EX02 TESTS ==========\n" RESET;
+	Bureaucrat supervisor("Supervisor", 100);
+	Bureaucrat manager("Manager", 50);
 	Bureaucrat bigBoss("Big Boss", 5);
-	Bureaucrat manager("Manager", 100);
 	ShrubberyCreationForm shrubForm("shrub_tree");
+	RobotomyRequestForm roboForm("BrokenBot");
 
 	//Instances information
 	printLabel("Instances Info");
-	std::cout << bigBoss;
+	std::cout << supervisor;
 	std::cout << manager;
+	std::cout << bigBoss;
 	std::cout << shrubForm;
+	std::cout << roboForm;
 
 	//Form signing
 	printLabel("Form Signing");
-	signForm(&shrubForm, bigBoss);
+	signForm(&shrubForm, supervisor);
+	signForm(&roboForm, supervisor);
+	signForm(&roboForm, manager);
 
 	printLabel("Form Execution Result");
 	try
@@ -179,6 +192,19 @@ int main()
 	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << '\n';
+	}
+	std::cout << "\n";
+	for (int i = 0; i < 10; i++)
+	{
+		try
+		{
+			roboForm.execute(bigBoss);
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		sleep(1);
 	}
 
 	std::cout << "\n";

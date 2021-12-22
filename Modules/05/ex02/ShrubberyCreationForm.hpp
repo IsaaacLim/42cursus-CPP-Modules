@@ -9,7 +9,7 @@ private:
 	ShrubberyCreationForm();
 
 	std::string const _target;
-	static std::string const trees[3];
+	static std::string const trees[2];
 
 public:
 	ShrubberyCreationForm(std::string const &target);

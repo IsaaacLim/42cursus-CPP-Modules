@@ -77,10 +77,10 @@ void Form::beSigned(Bureaucrat const &person)
 
 void Form::execute(Bureaucrat const &executor) const
 {
-	if (executor.getGrade() > this->_gradeToExecute)
-		throw Form::ExecutorGradeTooLowException();
 	if (!this->_isSigned)
 		throw Form::FormUnsignedException();
+	if (executor.getGrade() > this->_gradeToExecute)
+		throw Form::ExecutorGradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &out, Form const &instance)
