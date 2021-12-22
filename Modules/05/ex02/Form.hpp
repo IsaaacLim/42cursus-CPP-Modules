@@ -56,7 +56,7 @@ public:
 	void setIsSigned(bool isSigned);
 	void beSigned(Bureaucrat const &person);
 
-	virtual void execute(Bureaucrat const &executor) const;
+	virtual void execute(Bureaucrat const &executor) const; //to be called by concrete forms
 };
 
 std::ostream &operator<<(std::ostream &out, Form const &instance);

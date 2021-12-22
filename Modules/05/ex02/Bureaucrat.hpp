@@ -38,6 +38,7 @@ public:
 	void decrementGrade(void);
 
 	void signForm(Form &form) const; //to be called by Form::beSigned()
+	void executeForm(Form const &form);
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &instance);

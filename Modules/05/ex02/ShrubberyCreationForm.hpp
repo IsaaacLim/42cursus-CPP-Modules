@@ -28,7 +28,7 @@ public:
 		const char *what() const throw();
 	};
 
-	void execute(Bureaucrat const &executor) const;
+	void execute(Bureaucrat const &executor) const; //to be called by Bureaucret::executeForm
 };
 
 #endif

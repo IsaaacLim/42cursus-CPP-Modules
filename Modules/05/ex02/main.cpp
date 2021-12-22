@@ -187,7 +187,7 @@ int main()
 	printLabel("Form Execution Result");
 	try
 	{
-		shrubForm.execute(manager);
+		manager.executeForm(shrubForm);
 	}
 	catch (const std::exception &e)
 	{
@@ -198,7 +198,7 @@ int main()
 	{
 		try
 		{
-			roboForm.execute(bigBoss);
+			bigBoss.executeForm(roboForm);
 		}
 		catch (const std::exception &e)
 		{

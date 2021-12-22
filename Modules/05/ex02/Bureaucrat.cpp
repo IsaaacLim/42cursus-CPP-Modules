@@ -84,3 +84,13 @@ void Bureaucrat::signForm(Form &form) const
 		std::cout << form.getFormName() << "] form\n";
 	}
 }
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	if (!form.getIsSigned())
+		throw Form::FormUnsignedException();
+	if (this->_grade > form.getGradeToExecute())
+		throw Form::ExecutorGradeTooLowException();
+	std::cout << this->_name << " executes [" << form.getFormName() << "]\n";
+	form.execute(*this);
+}
