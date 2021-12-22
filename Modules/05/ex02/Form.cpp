@@ -22,7 +22,7 @@ Form::Form(Form const &other) : _formName(other._formName), _gradeToSign(other._
 		std::cout << "Form\t: Copy constructor\n";
 }
 
-Form::~Form() { std::cout << "Form\t: Destructor\n"; }
+Form::~Form() { std::cout << "Form\t: Destructor" << std::endl; }
 
 Form &Form::operator=(Form const &rhs)
 {

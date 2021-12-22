@@ -11,10 +11,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other)
 	std::cout << "Shrub F.: Copy constructor\n";
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
-{
-	std::cout << "Shrub F.: Destructor\n";
-}
+ShrubberyCreationForm::~ShrubberyCreationForm() { std::cout << "Shrub F.: Destructor" << std::endl; }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
 {
