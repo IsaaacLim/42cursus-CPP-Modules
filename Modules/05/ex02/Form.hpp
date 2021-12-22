@@ -18,6 +18,8 @@ private:
 	int const _gradeToSign;
 	int const _gradeToExecute;
 
+	std::string _target;
+
 public:
 	Form(std::string const &formName, bool isSigned, int const &gradeToSign, int const &gradeToExecute);
 	Form(Form const &other);
@@ -26,7 +28,7 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-	public:
+	public: //allows main function to catch specific exception
 		virtual const char *what() const throw();
 	};
 
@@ -35,14 +37,26 @@ public:
 	public:
 		virtual const char *what() const throw();
 	};
+	class ExecutorGradeTooLowException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+	class FormUnsignedException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
 
 	std::string getFormName(void) const;
 	bool getIsSigned(void) const;
 	int getGradeToSign(void) const;
 	int getGradeToExecute() const;
 
+	virtual std::string getTarget(void) const;
+
 	void setIsSigned(bool isSigned);
 	void beSigned(Bureaucrat const &person);
+
+	virtual void execute(Bureaucrat const &executor) const;
 };
 
 std::ostream &operator<<(std::ostream &out, Form const &instance);

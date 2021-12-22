@@ -9,7 +9,7 @@ private:
 	ShrubberyCreationForm();
 
 	std::string const _target;
-	static std::string const trees[1];
+	static std::string const trees[3];
 
 public:
 	ShrubberyCreationForm(std::string const &target);
@@ -17,14 +17,16 @@ public:
 	virtual ~ShrubberyCreationForm();
 	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
 
-	// class FileOpenException : public std::exception
-	// {
-	// 	const char *what() const throw();
-	// };
-	// class FileWriteException : public std::exception
-	// {
-	// 	const char *what() const throw();
-	// };
+	std::string getTarget(void) const;
+
+	class FileOpenException : public std::exception
+	{
+		const char *what() const throw();
+	};
+	class FileWriteException : public std::exception
+	{
+		const char *what() const throw();
+	};
 
 	void execute(Bureaucrat const &executor) const;
 };

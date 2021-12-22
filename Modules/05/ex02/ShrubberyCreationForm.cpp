@@ -23,36 +23,41 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return *this;
 }
 
-// const char *ShrubberyCreationForm::FileOpenException::what() const throw()
-// {
-// 	return "*Shrubbery Creation Form failed to open file*";
-// }
+const char *ShrubberyCreationForm::FileOpenException::what() const throw()
+{
+	return "*Shrubbery Creation Form failed to open file*";
+}
 
-// const char *ShrubberyCreationForm::FileWriteException::what() const throw()
-// {
-// 	return "*Shruberry Creation Form failed to write out*";
-// }
+const char *ShrubberyCreationForm::FileWriteException::what() const throw()
+{
+	return "*Shruberry Creation Form failed to write out*";
+}
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	(void)executor;
-	// Form::execute(executor);
+	Form::execute(executor); //test manual error with this error
 	std::string const outfileName = this->_target + "_shrubbery";
 	std::ofstream ofs;
 
 	ofs.open(outfileName.data(), std::ostream::out | std::ostream::app);
 	if (!ofs.is_open() || ofs.bad())
-		throw "*Shrubbery Creation Form failed to open file*";
-	ofs << ShrubberyCreationForm::trees[0] << std::endl;
+		throw FileOpenException();
+	ofs << ShrubberyCreationForm::trees[2] << std::endl;
 	if (ofs.bad())
 	{
 		ofs.close();
-		throw "*Shruberry Creation Form failed to write out*";
+		throw FileWriteException();
 	}
 	ofs.close();
+	std::cout << "Shrubbery trees has been planted in [" << outfileName << "]\n";
 }
 
-std::string const ShrubberyCreationForm::trees[1] = {
+std::string ShrubberyCreationForm::getTarget(void) const
+{
+	return this->_target;
+}
+
+std::string const ShrubberyCreationForm::trees[3] = {
 	"      /\\\n"
 	"     /\\*\\\n"
 	"    /\\O\\*\\\n"
@@ -62,4 +67,42 @@ std::string const ShrubberyCreationForm::trees[1] = {
 	"/\\O\\/\\/*/\\/O/\\\n"
 	"      ||\n"
 	"      ||\n"
-	"      ||\n"};
+	"      ||\n",
+	"           \\/ |    |/\n"
+	"        \\/ / \\||/  /_/___/_\n"
+	"         \\/   |/ \\/\n"
+	"    _\\__\\_\\   |  /_____/_\n"
+	"           \\  | /          /\n"
+	"  __ _-----`  |{,-----------~\n"
+	"            \\ }{\n"
+	"             }{{\n"
+	"             }}{\n"
+	"            {{}\n"
+	"       , -=-~{ .-^- _\n"
+	"             `}\n"
+	"              {\n",
+	"	            .        +          .      .          .\n"
+	"     .            _        .                    .\n"
+	"  ,              /;-._,-.____        ,-----.__\n"
+	" ((        .    (_:#::_.:::. `-._   /:, /-._, `._,\n"
+	"	 `                 \\   _|`\"=:_::.`.);  \\ __/ /\n"
+	"                      ,    `./  \\:. `.   )==-'  .\n"
+	"    .      ., ,-=-.  ,\\, +#./`   \\:.  / /           .\n"
+	".           \\/:/`-' , ,\\ '` ` `   ): , /_  -o\n"
+	"       .    /:+- - + +- : :- + + -:'  /(o-) \\)     .\n"
+	"  .      ,=':  \\    ` `/` ' , , ,:' `'--\".--\"---._/`7\n"
+	"   `.   (    \\: \\,-._` ` + '\\, ,\"   _,--._,---\":.__/\n"
+	"              \\:  `  X` _| _,\\/'   .-'\n"
+	".               \":._:`\\____  /:'  /      .           .\n"
+	"                    \\::.  :\\/:'  /              +\n"
+	"	   .                 `.:.  /:'  }      .\n"
+	"           .           ):_(:;   \\           .\n"
+	"                      /:. _/ ,  |\n"
+	"                   . (|::.     ,`                  .\n"
+	"     .                |::.    {\\\n"
+	"                      |::.\\  \\ `.\n"
+	"                      |:::(\\    |\n"
+	"              O       |:::/{ }  |                  (o\n"
+	"               )  ___/#\\::`/ (O \"==._____   O, (O  /`\n"
+	"          ~~~w/w~\"~~,\\` `:/,-(~`\"~~~~~~~~\"~o~\\~/~w|/~\n"
+	"      ~~~~~~~~~~~~~~~~~~~~~~~\\\\W~~~~~~~~~~~~\\|/~~\n"};

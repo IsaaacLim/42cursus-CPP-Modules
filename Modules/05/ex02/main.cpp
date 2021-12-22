@@ -139,14 +139,47 @@ void ex01_test()
 	std::cout << "\n";
 }
 
+void signForm(Form *form, Bureaucrat penHolder)
+{
+	try
+	{
+		form->beSigned(penHolder);
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
+
 int main()
 {
 	// ex00_test();
 	// ex01_test();
 
 	std::cout << YELLOW "\n========== EX02 TESTS ==========\n" RESET;
-	Bureaucrat mike("Mike", 148);
-	ShrubberyCreationForm test("test");
+	Bureaucrat bigBoss("Big Boss", 5);
+	Bureaucrat manager("Manager", 100);
+	ShrubberyCreationForm shrubForm("shrub_tree");
 
-	test.execute(mike);
+	//Instances information
+	printLabel("Instances Info");
+	std::cout << bigBoss;
+	std::cout << manager;
+	std::cout << shrubForm;
+
+	//Form signing
+	printLabel("Form Signing");
+	signForm(&shrubForm, bigBoss);
+
+	printLabel("Form Execution Result");
+	try
+	{
+		shrubForm.execute(manager);
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << "\n";
 }

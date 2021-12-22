@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name), _grade
 
 Bureaucrat::~Bureaucrat() { std::cout << "B.crat\t: Destructor\n"; }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &other)
+Bureaucrat::Bureaucrat(Bureaucrat const &other) : _name(other.getName())
 {
 	*this = other;
 	if (_grade < 1)
