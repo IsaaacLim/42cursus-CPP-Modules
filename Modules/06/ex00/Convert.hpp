@@ -3,6 +3,10 @@
 
 #include <iostream>
 #include <sstream>
+#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 class Convert
 {
@@ -27,8 +31,8 @@ private:
 		eInt,
 		eFloat,
 		eDouble,
-		eLong,
-		eInvalid
+		eLong
+		// eInvalid
 	};
 
 	//Values in correct type
@@ -36,6 +40,10 @@ private:
 	int _iValue;
 	float _fValue;
 	double _dValue;
+
+	//Libft functions
+	static bool ft_isascii(int c);
+	static bool ft_isprint(int c);
 
 public:
 	Convert(std::string const &literal);

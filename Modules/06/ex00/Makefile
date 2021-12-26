@@ -1,4 +1,4 @@
-NAME		=	cast
+NAME		=	convert
 
 SRCS		=	Convert.cpp		main.cpp
 OBJS		=	$(SRCS:.cpp=.o)
