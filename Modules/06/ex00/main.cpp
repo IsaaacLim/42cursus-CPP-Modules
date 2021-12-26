@@ -46,9 +46,9 @@ void ft_display_edges(void)
 	std::cout << " Dbl max\t:  " << dbl_max << "\n";
 	std::cout << " inf (dbl)\t:  " << inf << "\n";
 
-	float test = 123e10f;
-	std::cout << "\n Test\t: " << test << "\n";
-	std::cout << "\n";
+	// float test = 123e10f;
+	// std::cout << "\n Test\t: " << test << "\n";
+	// std::cout << "\n";
 	// ********************************************************************** //
 	std::cout << " nan\t:  " << nan("") << "\n";
 	std::cout << "+nan\t:  " << +nan("") << "\n";
@@ -57,22 +57,51 @@ void ft_display_edges(void)
 	std::cout << "+nanf\t:  " << +nanf("") << "\n";
 	std::cout << "-nanf\t: " << -nanf("") << "\n";
 }
+void ft_test_instance(std::string test, long double num)
+{
+	std::stringstream ss;
+	std::string str;
+
+	std::cout << "--- " << test << " ---\n";
+	ss << num;
+	ss >> str;
+	Convert instance(str.c_str());
+	std::cout << instance << std::endl;
+	ss.str(std::string());
+	ss.clear();
+}
+void ft_test_double()
+{
+	std::stringstream ss;
+	std::string str;
+
+	std::cout << "====== DOUBLE TESTS ======\n";
+	ft_test_instance("-DBL MAX", -DBL_MAX);
+	ft_test_instance("-DBL MIN", -DBL_MIN);
+	ft_test_instance("DBL MIN", DBL_MIN);
+	ft_test_instance("DBL MAX", DBL_MAX);
+	ft_test_instance("-DBL MAX - 1e303", -DBL_MAX - 1e303);
+	ft_test_instance("DBL MAX + 1e303", DBL_MAX + 1e303);
+}
 
 int main(int argc, char *argv[])
 {
 	ft_display_edges();
+	ft_test_double();
 	// return (0);
-	if (argc != 2)
-		std::cout << "Input ONE argument to be converted" << std::endl;
-	else
-	{
-		Convert instance(argv[1]);
-		std::cout << instance << std::endl;
-	}
+	(void)argc;
+	// (void)argv;
+	// if (argc != 2)
+	// std::cout << "Input ONE argument to be converted" << std::endl;
+	// else
+	// {
+	Convert instance(argv[1]);
+	std::cout << instance << std::endl;
+	// }
 
-	for (int i = -20; i < 150; i++)
-	{
-		if (!isascii(i))
-			printf("%d, ", i);
-	}
+	// for (int i = -20; i < 150; i++)
+	// {
+	// 	if (!isascii(i))
+	// 		printf("%d, ", i);
+	// }
 }

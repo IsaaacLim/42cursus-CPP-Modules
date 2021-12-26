@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <limits>  //std::numeric_limits<T>
+#include <climits> //INT_MAX/MIN
+#include <float.h> //FLT_MAX/MIN
 
 class Convert
 {
@@ -30,9 +33,7 @@ private:
 		eChar,
 		eInt,
 		eFloat,
-		eDouble,
-		eLong
-		// eInvalid
+		eDouble
 	};
 
 	//Values in correct type
@@ -40,6 +41,8 @@ private:
 	int _iValue;
 	float _fValue;
 	double _dValue;
+
+	bool _overDblLimit = false;
 
 	//Libft functions
 	static bool ft_isascii(int c);
@@ -49,10 +52,12 @@ public:
 	Convert(std::string const &literal);
 	~Convert();
 
+	int getType(void) const;
 	char getCValue(void) const;
 	int getIValue(void) const;
 	float getFValue(void) const;
 	double getDValue(void) const;
+	bool getOverDblLimit(void) const;
 };
 
 std::ostream &operator<<(std::ostream &out, Convert const &instance);

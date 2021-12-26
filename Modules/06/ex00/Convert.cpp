@@ -2,7 +2,6 @@
 
 Convert::Convert(std::string const &literal) : _input(literal)
 {
-	std::cout << "Constructor\n\n";
 	this->evaluateInput();
 	this->cast();
 	if (!Convert::ft_isascii(_cValue))
@@ -11,12 +10,13 @@ Convert::Convert(std::string const &literal) : _input(literal)
 		_cValue = -2;
 }
 
-Convert::~Convert() { std::cout << "Destructor" << std::endl; }
+Convert::~Convert() {}
 
 void Convert::evaluateInput(void)
 {
 	std::stringstream ss;
 	int i = 0;
+	long double long_double;
 
 	size_t input_len = _input.length();
 
@@ -29,18 +29,18 @@ void Convert::evaluateInput(void)
 	//Float special case
 	else if (_input == "nanf" || _input == "inff" || _input == "+inff" || _input == "-inff")
 	{
-		std::cout << "Input\t: " << _input << "\n";
+		// std::cout << "Input\t: " << _input << "\n";
 		_type = eFloat;
 		_fValue = atof(_input.c_str());
-		std::cout << "Stored (flt)\t: " << _fValue << "\n";
+		// std::cout << "Stored (flt)\t: " << _fValue << "\n";
 	}
 	//Double special case
 	else if (_input == "nan" || _input == "inf" || _input == "+inf" || _input == "-inf")
 	{
-		std::cout << "Input\t: " << _input << "\n";
+		// std::cout << "Input\t: " << _input << "\n";
 		_type = eDouble;
 		_dValue = strtod(_input.c_str(), NULL); //alt function
-		std::cout << "Stored (dbl)\t: " << _dValue << "\n";
+												// std::cout << "Stored (dbl)\t: " << _dValue << "\n";
 	}
 	//Other numbers
 	else
@@ -70,7 +70,7 @@ void Convert::evaluateInput(void)
 			_type = eFloat;
 		else if ((size_t)i != input_len)
 		{
-			std::cout << "i = " << i << "input_len = " << input_len << "\n";
+			// std::cout << "i = " << i << "input_len = " << input_len << "\n";
 			_type = -1;
 		}
 		switch (_type)
@@ -82,7 +82,8 @@ void Convert::evaluateInput(void)
 			ss >> _fValue;
 			break;
 		case eDouble:
-			ss >> _dValue;
+			ss >> long_double;
+			_dValue = static_cast<double>(long_double); //turns to inf if over limits
 			break;
 		default:
 			break;
@@ -120,7 +121,7 @@ void Convert::cast(void)
 	}
 	case eDouble:
 	{
-		std::cout << "Type is double\n";
+		// std::cout << "Type is double\n";
 		this->_cValue = static_cast<char>(this->_dValue);
 		this->_iValue = static_cast<int>(this->_dValue);
 		this->_fValue = static_cast<float>(this->_dValue);
@@ -134,6 +135,8 @@ void Convert::cast(void)
 	}
 }
 
+int Convert::getType(void) const { return this->_type; }
+
 char Convert::getCValue(void) const { return this->_cValue; }
 
 int Convert::getIValue(void) const { return this->_iValue; }
@@ -142,18 +145,39 @@ float Convert::getFValue(void) const { return this->_fValue; }
 
 double Convert::getDValue(void) const { return this->_dValue; }
 
+bool Convert::getOverDblLimit(void) const { return this->_overDblLimit; }
+
 std::ostream &operator<<(std::ostream &out, Convert const &instance)
 {
 	char cValue = instance.getCValue();
-
-	if (cValue == -1)
+	double dValue = instance.getDValue();
+	//  num = static_cast<long>(instance.getFValue());
+	// std::cout << "dValue: " << dValue << "\n";
+	//Display wrong input
+	if (instance.getType() == -1)
+	{
+		out << "char\t: unacceptable input\n";
+		out << "int\t: unacceptable input\n";
+		out << "float\t: unacceptable input\n";
+		out << "double\t: unacceptable input\n";
+		return out;
+	}
+	//Display Char
+	if (cValue == -1 || (dValue < INT_MIN || dValue > std::numeric_limits<int>::max())) //different methods
 		out << "char\t: impossible\n";
 	else if (cValue == -2)
 		out << "char\t: Non displayable\n";
 	else
 		out << "char\t: '" << instance.getCValue() << "'\n";
-	out << "int\t: " << instance.getIValue() << "\n";
+	//Display Int
+	if (dValue < INT_MIN || dValue > INT_MAX)
+		out << "int\t: impossible\n";
+	else
+		out << "int\t: " << instance.getIValue() << "\n";
 	out << "float\t: " << instance.getFValue() << "f\n";
+	// if (instance.getOverDblLimit())
+	// out << "double\t: impossible\n";
+	// else
 	out << "double\t: " << instance.getDValue() << "\n";
 	return out;
 }
