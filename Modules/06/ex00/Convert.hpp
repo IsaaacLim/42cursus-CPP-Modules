@@ -18,17 +18,13 @@ class Convert
 private:
 	Convert();
 
-	//Functions
-	void evaluateInput(void);
-	void cast(void);
-	// void cast_char(void);
-	// void cast_int(void);
-	// void cast_float(void);
-	// void cast_double(void);
-
 	//Variables
 	std::string _input;
 	int _type;
+
+	//Helper functions
+	void evaluateInput(void);
+	void cast(void);
 
 	enum e_type
 	{
@@ -38,13 +34,14 @@ private:
 		eDouble
 	};
 
-	//Values in correct type
+	//Input value in correct type
 	char _cValue;
 	int _iValue;
 	float _fValue;
 	double _dValue;
 
 	bool _isIntOverFlow = false;
+	bool _isNan = false;
 
 public:
 	Convert(std::string const &literal);
@@ -56,6 +53,7 @@ public:
 	float getFValue(void) const;
 	double getDValue(void) const;
 	bool getIsIntOverFlow(void) const;
+	bool getIsNan(void) const;
 
 	//Libft functions
 	static bool ft_isascii(int c);
