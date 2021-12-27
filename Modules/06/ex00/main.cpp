@@ -57,6 +57,7 @@ void ft_display_edges(void)
 	std::cout << "+nanf\t:  " << +nanf("") << "\n";
 	std::cout << "-nanf\t: " << -nanf("") << "\n";
 }
+
 void ft_test_instance(std::string test, long double num)
 {
 	std::stringstream ss;
@@ -67,14 +68,26 @@ void ft_test_instance(std::string test, long double num)
 	ss >> str;
 	Convert instance(str.c_str());
 	std::cout << instance << std::endl;
-	ss.str(std::string());
-	ss.clear();
+	// ss.str(std::string()); //needed if reusing strinstream in same function
+	// ss.clear();
 }
-void ft_test_double()
+
+void ft_test_instance_int(std::string test, long num)
 {
 	std::stringstream ss;
 	std::string str;
 
+	std::cout << "--- " << test << " ---\n";
+	ss << num;
+	ss >> str;
+	Convert instance(str.c_str());
+	std::cout << instance << std::endl;
+	// ss.str(std::string()); //needed if reusing strinstream in same function
+	// ss.clear();
+}
+
+void ft_test_double()
+{
 	std::cout << "====== DOUBLE TESTS ======\n";
 	ft_test_instance("-DBL MAX", -DBL_MAX);
 	ft_test_instance("-DBL MIN", -DBL_MIN);
@@ -84,20 +97,41 @@ void ft_test_double()
 	ft_test_instance("DBL MAX + 1e303", DBL_MAX + 1e303);
 }
 
+void ft_test_float()
+{
+	std::cout << "====== FLOAT TESTS ======\n";
+	ft_test_instance("-FLT MAX", -FLT_MAX);
+	ft_test_instance("-FLT MIN", -FLT_MIN);
+	ft_test_instance("FLT MIN", FLT_MIN);
+	ft_test_instance("FLT MAX", FLT_MAX);
+	ft_test_instance("-FLT MAX - 1e33", -FLT_MAX - 1e33);
+	ft_test_instance("FLT MAX + 1e33", FLT_MAX + 1e33);
+}
+
+void ft_test_int()
+{
+	std::cout << "====== INT TESTS ======\n";
+	ft_test_instance_int("INT MIN", INT_MIN);
+	ft_test_instance_int("INT MAX", INT_MAX);
+	ft_test_instance_int("INT MIN - 1", -2147483649);
+	ft_test_instance_int("INT MAX + 1", 2147483648);
+}
+
 int main(int argc, char *argv[])
 {
 	ft_display_edges();
-	ft_test_double();
+	// ****** Remove these ****** //
+	// ft_test_double();
+	ft_test_float();
+	// ft_test_int();
 	// return (0);
-	(void)argc;
-	// (void)argv;
-	// if (argc != 2)
-	// std::cout << "Input ONE argument to be converted" << std::endl;
-	// else
-	// {
-	Convert instance(argv[1]);
-	std::cout << instance << std::endl;
-	// }
+	if (argc != 2)
+		std::cout << "Input ONE argument to be converted" << std::endl;
+	else
+	{
+		Convert instance(argv[1]);
+		std::cout << instance << std::endl;
+	}
 
 	// for (int i = -20; i < 150; i++)
 	// {
