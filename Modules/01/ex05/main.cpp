@@ -7,6 +7,7 @@ int main(void)
 
 	karen.complain("DEBUG");
 
+	//Test to show that program was implimented using pointers to member complain function
 	f = &Karen::complain;
 	(karen.*f)("INFO");
 	(karen.*f)("WARNING");
