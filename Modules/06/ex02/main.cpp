@@ -81,11 +81,13 @@ void identify(Base &p)
 int main(void)
 {
 	Base *ptr = generate();
-	identify(ptr);
-	std::cout << "\n";
-	Base &ref = *generate();
-	identify(ref);
 
+	std::cout << "\n";
+	identify(ptr);
+	identify(*ptr);
 	delete ptr;
-	delete &ref;
+
+	// Base &ref = *generate();
+	// identify(ref);
+	// delete &ref;
 }
