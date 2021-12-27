@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		std::cout << "run: ./karenFilter <complain>" << std::endl;
-		std::cout << "complains option: \"DEBUG\"/\"INFO\"/\"WARNIGN\"/\"ERROR\"" << std::endl;
+		std::cout << "complains option: \"DEBUG\"/\"INFO\"/\"WARNING\"/\"ERROR\"" << std::endl;
 		return 1;
 	}
 	karen.complain(argv[1]);
