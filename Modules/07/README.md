@@ -33,3 +33,5 @@
   Class p4;
   p4 = p1;      //Assignment operator
   ```
+
+- _Note: a `main.cpp` file was given in the intra. It's for ex02 but I don't think it's intended to be there. I've included a copy of this file in my repo under `main_intra.cpp`_

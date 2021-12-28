@@ -49,36 +49,72 @@ void ft_try_set(Array<T> &arr, int const &idx, T const &value)
 // ************************************************************************** //
 int main(void)
 {
-	ft_header("INT", 0);
-	Array<int> iNum;
-	Array<int> iNum2 = Array<int>(3);
+	ft_header("STRING", 0);
+	Array<std::string> str = Array<std::string>(5);
 
-	ft_title("Accessing iNum (empty array)", 0);
-	ft_try_set(iNum, 0, 10);
-	ft_title("Setting & Displaying value to iNum2 until out of limits", '\n');
-	for (int i = 0; i < 4; i++)
-		ft_try_set(iNum2, i, i * 10);
-	for (int i = 0; i < 4; i++)
+	str[0] = "First";
+	str[1] = "Second";
+	str[2] = "1234567890";
+	str[3] = "";
+	str[4] = "!@#$%^&*()";
+	for (int i = 0; i < 5; i++)
 	{
-		ft_try_display(iNum2, i);
+		ft_try_display(str, i);
+		std::cout << "\n";
+	}
+
+	// ---------------------------------------------------------------------- //
+	ft_header("NUMBERS", '\n');
+	std::cout << YELLOW "INT\t: " RESET;
+	Array<int> iNum = Array<int>(10);
+	for (int i = 0; i < 10; i++)
+	{
+		ft_try_set(iNum, i, i * 10);
+		ft_try_display(iNum, i);
 		std::cout << " ";
 	}
-	ft_title("Deep copy test with iNum2 & iNum3", '\n');
-	Array<int> iNum3 = iNum2;
-	std::cout << "iNum3: ";
-	for (int i = 0; i < 3; i++)
+	std::cout << "\n";
+	std::cout << YELLOW "FLOAT\t: " RESET;
+	Array<float> fNum = Array<float>(10);
+	for (int i = 0; i < 10; i++)
 	{
-		ft_try_set(iNum3, i, i);
-		ft_try_display(iNum3, i);
-		std::cout << " ";
-	}
-	std::cout << "\niNum2: ";
-	for (int i = 0; i < 3; i++)
-	{
-		ft_try_display(iNum2, i);
+		ft_try_set(fNum, i, (i + .42f));
+		ft_try_display(fNum, i);
 		std::cout << " ";
 	}
 	std::cout << "\n";
 
-	ft_header("CHAR", '\n');
+	// ---------------------------------------------------------------------- //
+	ft_header("Deep copy test", '\n');
+	Array<int> iNum2 = iNum;
+	std::cout << YELLOW "iNum2\t: " RESET;
+	for (int i = 0; i < 10; i++)
+	{
+		ft_try_set(iNum2, i, i * -20);
+		ft_try_display(iNum2, i);
+		std::cout << " ";
+	}
+	std::cout << YELLOW "\niNum\t: " RESET;
+	for (int i = 0; i < 10; i++)
+	{
+		ft_try_display(iNum, i);
+		std::cout << " ";
+	}
+	std::cout << "\n";
+
+	// ---------------------------------------------------------------------- //
+	ft_header("ERRORS", '\n');
+	Array<int> iNum3;
+	ft_title("Accessing iNum3 (empty array)", 0);
+	ft_try_set(iNum3, 0, 10);
+
+	ft_title("Setting & Displaying value of iNum until out of limits", '\n');
+	for (int i = 0; i < 11; i++)
+		ft_try_set(iNum, i, i * 10);
+	for (int i = 0; i < 11; i++)
+	{
+		ft_try_display(iNum, i);
+		std::cout << " ";
+	}
+	std::cout << std::endl;
 }
