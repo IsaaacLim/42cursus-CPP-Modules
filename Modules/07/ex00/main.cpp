@@ -1,4 +1,4 @@
-#include "Whatever.hpp"
+#include "whatever.hpp"
 
 template <typename T, typename U>
 void ft_display(T const &x, U const &y, char var1, char var2)
