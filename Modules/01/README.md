@@ -12,6 +12,7 @@
 ### ex02
 
 - Intro to `pointers` & `references`
+- `std::string::data()` provides direct access to the data in the `std::string` class
 
 ### ex03
 
