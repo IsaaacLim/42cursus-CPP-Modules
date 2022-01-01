@@ -2,13 +2,16 @@
 #define SPAN_HPP
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 class Span
 {
 private:
 	Span();
 
-	unsigned int size;
+	unsigned int _size;
+	std::vector<int> _arr;
 
 public:
 	Span(unsigned int size);
@@ -17,16 +20,20 @@ public:
 	Span &operator=(Span const &rhs);
 
 	void addNumber(int newNum);
-	int shortestSpan();
-	int longestSpan();
+	int shortestSpan(void);
+	int longestSpan(void);
+
+	unsigned int getSize(void);
+	std::vector<int> getArr(void);
+	void setSize(unsigned int newSize);
 
 	class FullStorageException : public std::exception
 	{
-		virtual const char *what() throw();
+		virtual const char *what() const throw();
 	};
 	class NoSpanException : public std::exception
 	{
-		virtual const char *what() throw();
+		virtual const char *what() const throw();
 	};
 };
 

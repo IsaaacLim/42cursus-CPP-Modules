@@ -1,6 +1,6 @@
 NAME		=	span
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp	Span.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
 CXX			=	c++	
@@ -11,7 +11,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o : %.cpp span.hpp
+%.o : %.cpp Span.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :
