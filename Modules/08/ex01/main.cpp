@@ -31,7 +31,7 @@ int main(void)
 	sp.addNumber(4);
 	try
 	{
-		sp.addNumber(5);
+		sp.addNumber(58);
 		sp.addNumber(1);
 	}
 	catch (const std::exception &e)
@@ -40,6 +40,7 @@ int main(void)
 	}
 	ft_print(sp);
 	std::cout << "minspan: " << sp.shortestSpan() << "\n";
+	std::cout << "maxspan: " << sp.longestSpan() << "\n";
 	ft_print(sp);
 
 	Span sp2 = Span(1);
@@ -55,6 +56,14 @@ int main(void)
 	try
 	{
 		std::cout << "minspan: " << sp2.shortestSpan() << "\n";
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		std::cout << "maxspan: " << sp2.longestSpan() << "\n";
 	}
 	catch (const std::exception &e)
 	{

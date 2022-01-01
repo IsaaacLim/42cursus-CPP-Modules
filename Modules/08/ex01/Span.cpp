@@ -38,11 +38,26 @@ int Span::shortestSpan(void)
 	arrCopy.erase(min);
 	min = std::min_element(arrCopy.begin(), arrCopy.end());
 	return (*min - firstMin);
+}
 
-	// 	std::vector<int>::iterator x;
-	// for (x = arrCopy.begin(); x != arrCopy.end(); ++x)
-	// 	std::cout << *x << " ";
-	// std::cout << std::endl;
+/*
+** Alternative syntax
+**	biggest = arrCopy.rbegin()[0]
+**	//rbegin() is reverse order starting at 0 for last element
+*/
+int Span::longestSpan(void)
+{
+	std::vector<int> arrCopy;
+	int smallest;
+	int biggest;
+
+	if (_arr.size() < 2)
+		throw NoSpanException();
+	arrCopy = _arr;
+	sort(arrCopy.begin(), arrCopy.end());
+	smallest = arrCopy.begin()[0];
+	biggest = arrCopy.end()[-1]; //end() is past the last element, -1 for last
+	return (biggest - smallest);
 }
 
 unsigned int Span::getSize(void) { return this->_size; }
