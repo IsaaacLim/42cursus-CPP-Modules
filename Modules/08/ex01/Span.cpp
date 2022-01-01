@@ -8,7 +8,7 @@ Span::Span(Span const &other)
 	this->_arr = other._arr;
 }
 
-Span::~Span() {} //.clear()
+Span::~Span() {}
 
 Span &Span::operator=(Span const &rhs)
 {
@@ -24,9 +24,7 @@ void Span::addNumber(int newNum)
 	this->_arr.push_back(newNum);
 }
 
-// template <typename T>
 void Span::addNumberRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
-// void Span::addNumberRange(T begin, T end)
 {
 	std::vector<int>::iterator it;
 

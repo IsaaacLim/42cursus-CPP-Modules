@@ -5,7 +5,6 @@
 #include <vector>
 #include <algorithm>
 
-// template <typename T>
 class Span
 {
 private:
@@ -22,7 +21,6 @@ public:
 
 	void addNumber(int newNum);
 	void addNumberRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-	// void addNumberRange(T begin, T end);
 	int shortestSpan(void);
 	int longestSpan(void);
 
