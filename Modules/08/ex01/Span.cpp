@@ -24,6 +24,25 @@ void Span::addNumber(int newNum)
 	this->_arr.push_back(newNum);
 }
 
+// template <typename T>
+void Span::addNumberRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+// void Span::addNumberRange(T begin, T end)
+{
+	std::vector<int>::iterator it;
+
+	for (it = begin; it != end; it++)
+	{
+		try
+		{
+			addNumber(*it);
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+}
+
 int Span::shortestSpan(void)
 {
 	std::vector<int>::iterator min;

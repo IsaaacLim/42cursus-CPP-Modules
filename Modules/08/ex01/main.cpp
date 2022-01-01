@@ -69,4 +69,39 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
+	//*******************************//
+	std::vector<int>::iterator it;
+	std::vector<int> tmp(10, 0);
+	srand(time(0));
+	generate(tmp.begin(), tmp.end(), rand);
+	std::cout << "random generated: ";
+	for (int i = 0; i < 10; i++)
+	{
+		// *it = i;
+		// it++;
+		tmp[i] %= 100;
+		std::cout << tmp[i] << " ";
+	}
+	std::cout << std::endl;
+
+	it = tmp.begin();
+
+	std::vector<int> tmp2(10, 0);
+	// tmp2.begin() = tmp.begin();
+	std::vector<int>::iterator it2;
+	it2 = tmp2.begin();
+	std::cout << "copied: ";
+	for (int i = 0; i < 10; i++)
+	{
+		*it2 = *it;
+		it++;
+		it2++;
+		std::cout << tmp2[i] << " ";
+	}
+	std::cout << std::endl;
+
+	Span sp3(9);
+	std::cout << "sp3: ";
+	sp3.addNumberRange(tmp2.begin(), tmp2.end());
+	ft_print(sp3);
 }
