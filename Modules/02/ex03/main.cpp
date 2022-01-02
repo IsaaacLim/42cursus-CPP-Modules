@@ -37,12 +37,11 @@ int main(void)
 	// ***** Point class Copy constructor and Assignation operator test ***** //
 	std::cout << "\n----- Point class Copy constructor & Assignation operator test -----\n";
 	Point tmp(0, 0);
-	Point tmp2(point2);
+	Point tmp2(c);
 
-	std::cout << "tmp" << tmp << " || point3" << point3;
-	std::cout << " || point2" << point2 << "\n";
-	tmp = point3;
-	std::cout << "tmp = point3 ... new tmp" << tmp << "\n";
-	std::cout << "tmp2(point2)... tmp2" << tmp2 << "\n";
+	std::cout << "tmp" << tmp << "\n";
+	tmp = b;
+	std::cout << "tmp = b ... new tmp" << tmp << "\n";
+	std::cout << "tmp2(c)... tmp2" << tmp2 << "\n";
 	return 0;
 }
