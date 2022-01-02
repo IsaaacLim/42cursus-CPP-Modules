@@ -1,5 +1,7 @@
 #include "Fixed.hpp"
 
+#include <cmath>
+
 int main(void)
 {
 	Fixed a;

@@ -7,7 +7,7 @@ class Fixed
 {
 private:
 	int _fpValue;
-	static const int _fracBits = 8; //binary point position?
+	static const int _fracBits = 8; //number of fractional bits
 public:
 	Fixed();
 	~Fixed();

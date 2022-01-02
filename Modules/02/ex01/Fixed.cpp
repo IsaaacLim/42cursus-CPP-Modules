@@ -1,14 +1,16 @@
 #include "Fixed.hpp"
 #include <cmath>
 
-//Convers integerto fixed (8) point value
 Fixed::Fixed(void) : _fpValue(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 	return;
 }
 
-//Convers integerto fixed (8) point value
+/*
+** Converts integer to fixed point value with 8 fractional bits
+**	Bit shift for (num * 2 ^ 8)
+*/
 Fixed::Fixed(int const num)
 {
 	std::cout << "Int constructor called" << std::endl;
@@ -16,7 +18,10 @@ Fixed::Fixed(int const num)
 	return;
 }
 
-//Converts floating point to fixed (8) point value
+/*
+** Converts integer to fixed point value with 8 fractional bits
+**	Source: https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
+*/
 Fixed::Fixed(float const num)
 {
 	std::cout << "Float constructor called" << std::endl;
