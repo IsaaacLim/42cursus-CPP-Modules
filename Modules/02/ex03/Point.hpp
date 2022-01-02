@@ -6,15 +6,14 @@
 
 class Point
 {
-	//Supposed to be const but can't initialize then
 private:
-	Fixed _x;
-	Fixed _y;
+	Fixed const _x;
+	Fixed const _y;
 
 public:
 	Point(void);
-	Point(Point const &other);
 	Point(float const x, float const y);
+	Point(Point const &other);
 	~Point(void);
 
 	Point &operator=(Point const &rhs);
@@ -22,5 +21,7 @@ public:
 	Fixed getX(void) const;
 	Fixed getY(void) const;
 };
+
+std::ostream &operator<<(std::ostream &out, Point const &var);
 
 #endif

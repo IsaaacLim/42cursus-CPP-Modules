@@ -2,20 +2,47 @@
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);
 
+void ft_output(Point const &a, Point const &b, Point const &c, Point const &pt)
+{
+	std::cout << pt << ": ";
+	if (bsp(a, b, c, pt))
+		std::cout << "Inside" << std::endl;
+	else
+		std::cout << "Not inside" << std::endl;
+}
+
 int main(void)
 {
 	Point const a(0, 0);
 	Point const b(20, 0);
 	Point const c(10, 30);
 
-	// Point const point(10, 15);
-	Point const point(20, 1);
-	// Point const point(-1, 0);
+	Point const point1(0, 0);
+	Point const point2(20, 0);
+	Point const point3(10, 15);
+	Point const point4(10, 30);
+	Point const point5(-1, 0);
+	Point const point6(20, 1);
+	Point const point7(10, 31);
 
-	if (bsp(a, b, c, point))
-		std::cout << "Inside" << std::endl;
-	else
-		std::cout << "Not inside" << std::endl;
+	std::cout << "Triangle: a" << a << " b" << b << " c" << c << "\n\n";
+	ft_output(a, b, c, point1);
+	ft_output(a, b, c, point2);
+	ft_output(a, b, c, point3);
+	ft_output(a, b, c, point4);
+	ft_output(a, b, c, point5);
+	ft_output(a, b, c, point6);
+	ft_output(a, b, c, point7);
 
+	// ***** Point class Copy constructor and Assignation operator test ***** //
+	std::cout << "\n----- Point class Copy constructor & Assignation operator test -----\n";
+	Point tmp(0, 0);
+	Point tmp2(point2);
+
+	std::cout << "tmp" << tmp << " || point3" << point3;
+	std::cout << " || point2" << point2 << "\n";
+	tmp = point3;
+	std::cout << "tmp = point3 ... new tmp" << tmp << "\n";
+	std::cout << "tmp2(point2)... tmp2" << tmp2 << "\n";
 	return 0;
 }

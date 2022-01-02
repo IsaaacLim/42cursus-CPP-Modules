@@ -2,26 +2,20 @@
 
 Point::Point(void) : _x(0), _y(0) { return; }
 
-Point::Point(Point const &other)
-{
-	this->_x = other.getX();
-	this->_y = other.getY();
-}
+Point::Point(float const x, float const y) : _x(x), _y(y) {}
 
-Point::Point(float const x, float const y)
-{
-	this->_x = Fixed(x);
-	this->_y = Fixed(y);
-}
+Point::Point(Point const &other) : _x(other.getX()), _y(other.getY()) {}
 
 Point::~Point(void) { return; }
 
 Point &Point::operator=(Point const &rhs)
 {
+	Fixed *tmpX = const_cast<Fixed *>(&this->_x);
+	Fixed *tmpY = const_cast<Fixed *>(&this->_y);
 	if (this != &rhs)
 	{
-		this->_x = rhs.getX();
-		this->_y = rhs.getY();
+		*tmpX = rhs.getX();
+		*tmpY = rhs.getY();
 	}
 	return *this;
 }
@@ -34,4 +28,10 @@ Fixed Point::getX(void) const
 Fixed Point::getY(void) const
 {
 	return this->_y;
+}
+
+std::ostream &operator<<(std::ostream &out, Point const &var)
+{
+	out << "(" << var.getX() << ", " << var.getY() << ")";
+	return out;
 }
