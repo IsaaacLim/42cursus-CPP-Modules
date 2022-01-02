@@ -114,20 +114,29 @@ Fixed Fixed::operator-(Fixed const &rhs)
 	return (temp);
 }
 
-//Another syntax
+/*
+** Another syntax
+** Multiply into a larger sized variable, then right shift by the number of bits of fixed point precision
+**	source: https://stackoverflow.com/questions/14008330/how-do-you-multiply-two-fixed-point-numbers
+*/
 Fixed Fixed::operator*(Fixed const &rhs)
 {
 	Fixed temp(*this);
 
-	temp.setRawBits(_fpValue * rhs._fpValue / (1 << Fixed::_fracBits));
+	temp.setRawBits((_fpValue * rhs._fpValue) >> Fixed::_fracBits);
+	// temp.setRawBits(_fpValue * rhs._fpValue / (1 << Fixed::_fracBits)); //same
 	return (temp);
 }
 
+/*
+** Promote the numerator then divide
+**	source: https://stackoverflow.com/questions/8506317/fixed-point-unsigned-division-in-c?rq=1
+*/
 Fixed Fixed::operator/(Fixed const &rhs)
 {
 	Fixed temp;
 
-	temp._fpValue = _fpValue * (1 << Fixed::_fracBits) / rhs._fpValue;
+	temp._fpValue = (_fpValue << Fixed::_fracBits) / rhs._fpValue;
 	return (temp);
 }
 
