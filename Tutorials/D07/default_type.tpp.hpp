@@ -15,13 +15,19 @@ private:
 	T const _z;
 
 public:
-	Vertex(T const &x, T const &y, T const &z) : _x(x), _y(y), _z(z){};
+	// Vertex(T const &x, T const &y, T const &z) : _x(x), _y(y), _z(z){}; //method #!
+	Vertex(T const &x, T const &y, T const &z); //method #2
 	~Vertex(void){};
 
 	T const &getX(void) const { return this->_x; }
 	T const &getY(void) const { return this->_y; }
 	T const &getZ(void) const { return this->_z; }
 };
+
+//method #2
+template <typename T> //don't set default type
+Vertex<T>::Vertex(T const &x, T const &y, T const &z) : _x(x), _y(y), _z(z){};
+
 
 template <typename T>
 std::ostream &operator<<(std::ostream &o, Vertex<T> const &v)
