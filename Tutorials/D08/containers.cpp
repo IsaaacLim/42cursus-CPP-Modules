@@ -31,8 +31,11 @@ void ft_array(void)
 		*i = 2;																		   // iterator is like a pointer
 	for (auto i = cont_arr.begin(); i != cont_arr.end(); ++i)						   //auto keyword to replace the words
 		*i = 3;
-	for (auto &i : cont_arr) //ranged for loop (does the same thing)
+	for (auto &i : cont_arr) //Ranged Based FOR Loop (does the same thing)
 		i = 4;
+	for (int i : cont_arr) //RBFL in simple syntax
+		std::cout << i << " ";
+	std::cout << "\n";
 	std::fill(cont_arr.begin(), cont_arr.end(), 5); //algorithm functions (does the same thing)
 }
 
@@ -181,15 +184,23 @@ void ft_map(void)
 
 	for (auto &i : container2)
 		cout << i.first << " = " << i.second << "\n"; //first(key), second(value)
+	std::cout << std::endl;
+	using ScoreMap = std::map<std::string, int>; //another syntax
+	for (ScoreMap::const_iterator it = container2.begin(); it != container2.end(); it++)
+	{
+		auto &key = it->first;
+		auto &value = it->second;
+		std::cout << key << " = " << value << "\n";
+	}
 }
 
 int main()
 {
-	ft_array();
-	ft_vector();
-	ft_list();
-	ft_set();
-	ft_unordered_set();
+	// ft_array();
+	// ft_vector();
+	// ft_list();
+	// ft_set();
+	// ft_unordered_set();
 	ft_map();
 }
 
