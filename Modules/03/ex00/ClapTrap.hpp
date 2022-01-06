@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#define BLUE "\033[0;34m"
+#define RESET "\033[0m"
+
 class ClapTrap
 {
 private:
