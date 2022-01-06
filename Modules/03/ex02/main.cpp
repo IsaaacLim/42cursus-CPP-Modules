@@ -16,7 +16,7 @@ int main(void)
 	std::cout << "HitPoints remaining: CT_PLAYER1(" << ct_p1.getHitPoints() << ") CT_PLAYER2(";
 	std::cout << ct_p2.getHitPoints() << ")" << std::endl;
 
-	std::cout << "---- ScavTrap ----" << std::endl;
+	std::cout << "\n=============== ScavTrap ===============" << std::endl;
 	ScavTrap st_p1("ST_PLAYER1");
 	st_p1.attack("ENEMY1");
 	st_p1.takeDamage(6);
@@ -31,7 +31,7 @@ int main(void)
 	std::cout << ct_p2.getHitPoints() << ") ST_PLAYER1(" << st_p1.getHitPoints() << ") ST_PLAYER2(";
 	std::cout << st_p2.getHitPoints() << ")" << std::endl;
 
-	std::cout << "----FragTrap ----" << std::endl;
+	std::cout << "\n===============FragTrap ===============" << std::endl;
 	FragTrap ft_p1("FT_PLAYER1");
 	ft_p1.attack("ENEMY1");
 	ft_p1.takeDamage(20);
