@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap(void)
 {
-	std::cout << "ClapTrap: Default constructor called" << std::endl;
+	std::cout << BLUE "ClapTrap: Default constructor called" RESET << std::endl;
 	return;
 }
 
