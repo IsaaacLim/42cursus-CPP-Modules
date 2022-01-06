@@ -31,7 +31,7 @@ int main(void)
 	std::cout << ct_p2.getHitPoints() << ") ST_PLAYER1(" << st_p1.getHitPoints() << ") ST_PLAYER2(";
 	std::cout << st_p2.getHitPoints() << ")" << std::endl;
 
-	std::cout << "\n===============FragTrap ===============" << std::endl;
+	std::cout << "\n=============== FragTrap ===============" << std::endl;
 	FragTrap ft_p1("FT_PLAYER1");
 	ft_p1.attack("ENEMY1");
 	ft_p1.takeDamage(20);

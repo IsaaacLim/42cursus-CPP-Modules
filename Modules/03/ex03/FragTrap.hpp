@@ -4,6 +4,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+//prevent ambiguity when referring to ClapTrap variables
 class FragTrap : virtual public ClapTrap
 {
 protected:
@@ -16,7 +17,7 @@ public:
 	FragTrap(void);
 	FragTrap(std::string name);
 	FragTrap(FragTrap const &other);
-	virtual ~FragTrap(void);
+	~FragTrap(void);
 
 	FragTrap &operator=(FragTrap const &rhs);
 

@@ -4,6 +4,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+//prevent ambiguity when referring to ClapTrap variables
 class ScavTrap : virtual public ClapTrap
 {
 	//Will create ambiguity for DiamondTrap
@@ -17,7 +18,7 @@ public:
 	ScavTrap(void);
 	ScavTrap(std::string name);
 	ScavTrap(ScavTrap const &other);
-	virtual ~ScavTrap(void);
+	~ScavTrap(void);
 
 	ScavTrap &operator=(ScavTrap const &rhs);
 

@@ -4,7 +4,7 @@
 
 void clap_trap(void)
 {
-	std::cout << "---------- ClapTrap ----------" << std::endl;
+	std::cout << "=============== ClapTrap ===============" << std::endl;
 
 	ClapTrap ct_p1("CT_PLAYER1");
 
@@ -22,7 +22,7 @@ void clap_trap(void)
 
 void scav_trap(void)
 {
-	std::cout << "\n\n---------- ScavTrap ----------" << std::endl;
+	std::cout << "\n=============== ScavTrap ===============" << std::endl;
 	ScavTrap st_p1("ST_PLAYER1");
 	st_p1.attack("ENEMY1");
 	st_p1.takeDamage(6);
@@ -39,7 +39,7 @@ void scav_trap(void)
 
 void frag_trap(void)
 {
-	std::cout << "\n\n----------FragTrap ----------" << std::endl;
+	std::cout << "\n=============== FragTrap ===============" << std::endl;
 	FragTrap ft_p1("FT_PLAYER1");
 	ft_p1.attack("ENEMY1");
 	ft_p1.takeDamage(20);
@@ -60,7 +60,7 @@ int main(void)
 	scav_trap();
 	frag_trap();
 
-	std::cout << "----DiamondTrap----" << std::endl;
+	std::cout << "\n=============== DiamondTrap ===============" << std::endl;
 	DiamondTrap *dt_p1 = new DiamondTrap("DT_PLAYER1");
 	dt_p1->whoAmI();
 	dt_p1->attack("ENEMY1");
