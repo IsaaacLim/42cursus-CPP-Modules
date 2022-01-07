@@ -17,18 +17,22 @@ int main()
 	std::cout << "\n" RESET;
 
 	// Polymorphism Tests --------------------
-	std::cout << CYAN "dog->getType()\t\t: " << dog->getType() << "\n";
-	std::cout << PURPLE "cat->getType()\t\t: " << cat->getType() << "\n";
-	std::cout << RED "wrongcat->getType()\t: " << wrongcat->getType() << "\n\n";
-
-	std::cout << PURPLE "cat->makeSound()\t: ";
-	cat->makeSound();
-	std::cout << CYAN "dog->makeSound()\t: ";
+	std::cout << CYAN "DOG\ngetType()\t: " << dog->getType() << "\n";
+	std::cout << "makeSound()\t: ";
 	dog->makeSound();
-	std::cout << YELLOW "meta->makeSound()\t: ";
-	meta->makeSound();
-	std::cout << RED "wrongcat->makeSound()\t: ";
+
+	std::cout << PURPLE "CAT\ngetType()\t: " << cat->getType() << "\n";
+	std::cout << "makeSound()\t: ";
+	cat->makeSound();
+
+	std::cout << RED "WRONGCAT\ngetType()\t: " << wrongcat->getType() << "\n";
+	std::cout << "makeSound()\t: ";
 	wrongcat->makeSound();
+	
+	std::cout << YELLOW "META\ngetType()\t: "<< meta->getType() << "\n";
+	std::cout << "makeSound()\t: ";
+	meta->makeSound();
+
 	std::cout << "\n" RESET;
 
 	// Destructors --------------------
