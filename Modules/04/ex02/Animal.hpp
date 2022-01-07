@@ -9,12 +9,14 @@
 */
 class AAnimal
 {
+private:
+	AAnimal(const AAnimal &animal); //could just leave it in public too and include the function in .cpp
+
 protected:
 	std::string type;
 
 public:
 	AAnimal(void);
-	// AAnimal(const AAnimal &animal);
 	virtual ~AAnimal(void);
 	virtual AAnimal &operator=(const AAnimal &animal) = 0;
 
