@@ -40,6 +40,7 @@ int main()
 	std::cout << "\n---------- DEEP COPY TEST ----------\n";
 	Character *ori = new Character("Ori");
 	Character *copy = new Character();
+	tmp = src->createMateria("cure");
 	ori->equip(tmp);
 	*copy = *ori;
 	std::cout << "Copy-> ";

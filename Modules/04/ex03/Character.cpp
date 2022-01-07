@@ -78,7 +78,7 @@ void Character::unequip(int idx)
 	else
 	{
 		std::cout << GREEN "Character\t: Unequipped " << this->_materias[idx]->getType() << "\n" RESET;
-		// delete this->_materias[idx];
+		delete this->_materias[idx];
 		if (idx == SKILL_AMOUNT - 1)
 			this->_materias[idx] = NULL;
 		for (; idx < SKILL_AMOUNT - 1; idx++)
