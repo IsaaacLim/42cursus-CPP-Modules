@@ -55,4 +55,5 @@ int main()
 
 	std::cout << RED;
 	delete wrongcat;
+	std::cout << RESET;
 }
