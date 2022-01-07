@@ -2,6 +2,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+
 int main()
 {
 	std::cout << "---------- CREATING MATERIA SOURCES ----------\n";
