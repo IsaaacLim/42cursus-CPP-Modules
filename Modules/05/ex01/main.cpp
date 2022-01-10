@@ -3,24 +3,23 @@
 
 #define RED "\033[0;31m"
 #define GREEN "\033[0;32m"
-#define YELLOW "\033[0;33m"
-#define BLUE "\033[0;34m"
+#define BOLD "\033[1;33m"
+#define ITALIC "\033[3;33m"
 #define RESET "\033[0m"
 
-void printLabel(std::string label)
+void ft_title(std::string str, char c)
 {
-	std::cout << YELLOW "\n------ " << label << " ------\n" RESET;
+	std::cout << c << ITALIC "------ " << str << " ------\n" RESET;
 }
 
 void ex00_test()
 {
-	std::cout << YELLOW "========== EX00 TESTS ==========\n" RESET;
+	std::cout << BOLD "========== EX00 TESTS ==========\n" RESET;
 	Bureaucrat jacob("Jacob", 3);
 	Bureaucrat mike("Mike", 148);
 
-	std::cout << "\n";
-
 	//Increment grade until it's too high
+	ft_title("TEST 1, Increment until too high", '\n');
 	for (int i = 0; i < 4; i++)
 	{
 		try
@@ -33,9 +32,9 @@ void ex00_test()
 			std::cerr << jacob.getName() << ", " << e.what() << "\n";
 		}
 	}
-	std::cout << "\n";
 
 	//Decrement grade until it's too low
+	ft_title("TEST 2, Decrement until too low", '\n');
 	for (int i = 0; i < 4; i++)
 	{
 		try
@@ -45,7 +44,6 @@ void ex00_test()
 		}
 		catch (Bureaucrat::GradeTooLowException &e) //made public to allow specific catch
 		{
-			std::cerr << "beau-> ";
 			std::cerr << mike.getName() << ", " << e.what() << "\n";
 		}
 		catch (std::exception &e)
@@ -53,38 +51,36 @@ void ex00_test()
 			std::cerr << mike.getName() << ", " << e.what() << "\n";
 		}
 	}
-	std::cout << "\n";
 
-	//Instantiate unusable Bureaucrats
+	//Instantiate an unusable Bureaucrat
+	ft_title("TEST 3, Instantiate an unsuable Bureaucrat", '\n');
 	try
 	{
 		Bureaucrat molly("Molly", 0);
-		molly.decrementGrade();
-		std::cout << molly;
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << e.what();
+		std::cerr << e.what() << "\n";
 	}
-	std::cout << "\n";
+
+	//Copy an unusable Bureaucrat
+	ft_title("TEST 4, Copy an unusable Bureaucrat", '\n');
 	try
 	{
 		Bureaucrat new_mike(mike);
-		new_mike.incrementGrade();
-		std::cout << new_mike;
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << e.what();
+		std::cerr << e.what() << "\n";
 	}
 	std::cout << "\n";
 }
 
 int main(void)
 {
-	// ex00_test();
+	ex00_test();
 
-	std::cout << YELLOW "\n========== EX01 TESTS ==========\n" RESET;
+	std::cout << BOLD "\n========== EX01 TESTS ==========\n" RESET;
 	Bureaucrat mike("Mike", 50);
 	Form f_general("General", false, 100, 10);
 	Form f_classified("Classified", false, 20, 5);
@@ -92,35 +88,39 @@ int main(void)
 	Form forms[3] = {f_general, f_classified, f_signed};
 
 	//Instances information
-	printLabel("Instances Info");
+	ft_title("Instances Info", '\n');
 	std::cout << mike;
 	std::cout << f_general;
 	std::cout << f_classified;
 	std::cout << f_signed;
 
 	//Form signing
-	printLabel("Form Signing");
+	ft_title("Form Signing", '\n');
 	for (int i = 0; i < 3; i++)
 	{
 		try
 		{
+			std::cout << GREEN;
 			forms[i].beSigned(mike);
+			std::cout << RESET;
 		}
 		catch (const std::exception &e)
 		{
+			std::cout << RED;
 			std::cerr << mike.getName() << " cannot sign [" << forms[i].getFormName();
 			std::cerr << "] form because ";
 			std::cerr << e.what() << '\n';
+			std::cout << RESET;
 		}
 	}
 
 	//Form Information
-	printLabel("Form Info");
+	ft_title("Form Info", '\n');
 	for (int i = 0; i < 3; i++)
 		std::cout << forms[i];
 
 	//Instantiate unusable form
-	printLabel("Instantiate unusable form");
+	ft_title("Instantiate unusable form", '\n');
 	try
 	{
 		Form f_wrong1("Wrong", false, 100, 0);
