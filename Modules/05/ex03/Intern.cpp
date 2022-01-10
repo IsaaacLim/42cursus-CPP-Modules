@@ -24,11 +24,11 @@ const char *Intern::NoFormException::what() const throw()
 Form *Intern::makeForm(std::string const &form, std::string const &target) const
 {
 	Form *ptr = NULL;
-	int form_no = 3;
-	for (int i = 0; i < 3; i++)
+	int form_no;
+	for (form_no = 0; form_no < 3; form_no++)
 	{
-		if (formNames[i] == form)
-			form_no = i;
+		if (formNames[form_no] == form)
+			break ;
 	}
 	switch (form_no)
 	{
