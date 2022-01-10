@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name), _grade
 		std::cout << "Constructor\n";
 }
 
-Bureaucrat::~Bureaucrat() { std::cout << "Destructor\n"; }
+Bureaucrat::~Bureaucrat() { std::cout << "Destructor" << std::endl; }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &other)
 {
