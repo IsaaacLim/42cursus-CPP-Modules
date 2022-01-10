@@ -106,11 +106,11 @@ int main(void)
 		}
 		catch (const std::exception &e)
 		{
-			std::cout << RED;
+			std::cerr << RED;
 			std::cerr << mike.getName() << " cannot sign [" << forms[i].getFormName();
 			std::cerr << "] form because ";
 			std::cerr << e.what() << '\n';
-			std::cout << RESET;
+			std::cerr << RESET;
 		}
 	}
 
