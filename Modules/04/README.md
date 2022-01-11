@@ -1,3 +1,6 @@
+> Grades: 92/100
+> - ex00 required a `WrongCat` class which inherits from a `WrongAnimal` class.  I didn't create a `WrongAnimal` class.
+
 # Topics Covered
 
 ## Polymorphism
