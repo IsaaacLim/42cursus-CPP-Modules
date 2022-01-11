@@ -1,18 +1,50 @@
-# 42KL-Core_CPP
+# 42cursus-Cpp-Modules
 
-## Revisit Tutorials from Intra:
+### CPP Module 00
 
-Tutorial-D00-comparison
+- Getting started with CPP
+- Syntax
+- Classes
+- CPP functions
 
-## Additional Notes
+### CPP Module 01
 
-1.  Module00 - ex02.
+- Stack & Heap instances (`new` & `delete`)
+- Pointers and References
+- Filestreams
+- Switch cases
 
-    1. Generating timestamp [link](https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c#:~:text=You%20can%20try%20the%20following%20cross%2Dplatform%20code%20to%20get%20current%20date/time%3A)
-    2. Compare files with `shell` commands:
+### CPP Module 02
 
-       > awk -F ' ' '{print $2}' <file_name> [link](https://unix.stackexchange.com/questions/136884/how-to-use-a-shell-command-to-only-show-the-first-column-and-last-column-in-a-te#:~:text=awk%20%2DF%20%27%7C%27%20%27%7Bprint%20%241%2C%20%24NF%7D%27%20logfile)
+- Conical form
+- Operation overload
+- Function overload
+- _Extra: Const_cast (CPP Module 06)_
 
-       > comm -3 <file_1> <file_2> [link](<https://stackoverflow.com/questions/4544709/compare-two-files-line-by-line-and-generate-the-difference-in-another-file#:~:text=diff(1)%20is%20not%20the%20answer%2C%20but%20comm(1)%20is.>)
+### CPP Module 03
 
-    3. Destructor call order: "Its the implementation of std::vector, which apparently has different orders of destroying its content depending on the os/compiler." [link](https://42born2code.slack.com/archives/CN9RHKQHW/p1635162421031100)
+- Inheritance
+
+### CPP Module 04
+
+- Polymorphism
+- Abstract classes
+- Interfaces
+
+### CPP Module 05
+
+- Nested classes
+- Exceptions
+
+### CPP Module 06
+
+- Cast
+
+### CPP Module 07
+
+- Template functions
+- Template classes & structures
+
+### CPP Module 08
+
+- Standard Template Library (STL)

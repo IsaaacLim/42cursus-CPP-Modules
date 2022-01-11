@@ -1,5 +1,6 @@
 > Grades: 92/100
-> - ex00 required a `WrongCat` class which inherits from a `WrongAnimal` class.  I didn't create a `WrongAnimal` class.
+>
+> - ex00 required a `WrongCat` class which inherits from a `WrongAnimal` class. I didn't create a `WrongAnimal` class.
 
 # Topics Covered
 
@@ -29,7 +30,7 @@
 
 ### ex03
 
-- **Interface** only permits user to state functionalily but not to implement it, **abstrct classes** permits users to make functionality that subclasses can implement or override
+- **Interface** only permits user to state functionalily but not to implement it, **abstract classes** permits users to make functionality that subclasses can implement or override
 - Project instruction:
   1.  Create a `MateriaSource` _(Spellbook)_
   2.  Include some spells into the _Spellbook_ (only `Ice` & `Cure` available)
