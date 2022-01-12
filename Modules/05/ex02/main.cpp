@@ -144,20 +144,21 @@ void ex01_test()
 	std::cout << "\n";
 }
 
-void signForm(Form *form, Bureaucrat penHolder)
+// pass a Reference of Bureaucrat so it won't create a temporary copy
+void signForm(Form *form, Bureaucrat &penHolder)
 {
 	try
 	{
-		std::cout << GREEN "\n";
+		std::cout << GREEN;
 		form->beSigned(penHolder);
-		std::cout << "\n" RESET;
+		std::cout << RESET;
 	}
 	catch (const std::exception &e)
 	{
 		std::cerr << RED;
 		std::cerr << penHolder.getName() << " couldn't sign [";
 		std::cerr << form->getFormName() << "] form: ";
-		std::cerr << e.what() << "\n\n" RESET;
+		std::cerr << e.what() << "\n" RESET;
 	}
 }
 
