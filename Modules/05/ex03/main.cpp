@@ -146,18 +146,18 @@ void ex01_test()
 }
 
 
-void signForm(Form *form, Bureaucrat penHolder)
+void signForm(Form *form, Bureaucrat *penHolder)
 {
 	try
 	{
 		std::cout << "\n";
-		form->beSigned(penHolder);
+		form->beSigned(*penHolder);
 		std::cout << "\n";
 	}
 	catch (const std::exception &e)
 	{
 		std::cerr << RED;
-		std::cerr << penHolder.getName() << " couldn't sign [";
+		std::cerr << penHolder->getName() << " couldn't sign [";
 		std::cerr << form->getFormName() << "] form: ";
 		std::cerr << e.what() << "\n\n" RESET;
 	}
@@ -184,11 +184,11 @@ void ex02_test()
 
 	//Form signing
 	ft_title("Form Signing", '\n');
-	signForm(&shrubForm, supervisor);
-	signForm(&roboForm, supervisor);
-	signForm(&roboForm, manager);
-	signForm(&pardonForm, manager);
-	signForm(&pardonForm, bigBoss);
+	signForm(&shrubForm, &supervisor);
+	signForm(&roboForm, &supervisor);
+	signForm(&roboForm, &manager);
+	signForm(&pardonForm, &manager);
+	signForm(&pardonForm, &bigBoss);
 
 	ft_title("Form Execution Result", '\n');
 	std::cout << BLUE "Shrubbery ---------------\n" RESET;
@@ -229,13 +229,13 @@ void ex02_test()
 	std::cout << "\n";
 }
 
-Form *createForm(Intern intern, std::string const &formName, std::string const &target)
+Form *createForm(Intern *intern, std::string const &formName, std::string const &target)
 {
 	Form *rrf = NULL;
 	try
 	{
 		std::cerr << "\n" GREEN;
-		rrf = intern.makeForm(formName, target);
+		rrf = intern->makeForm(formName, target);
 		std::cerr << RESET "\n";
 	}
 	catch (const std::exception &e)
@@ -260,10 +260,10 @@ int main()
 	Form *pardon;
 
 	ft_title("Creating forms", '\n');
-	shrub = createForm(someRandomIntern, "Flowers Please", "Defendant");
-	shrub = createForm(someRandomIntern, "shrubbery creation", "home");
-	robo = createForm(someRandomIntern, "robotomy request", "borkenBot");
-	pardon = createForm(someRandomIntern, "presidential pardon", "Defendant");
+	shrub = createForm(&someRandomIntern, "Flowers Please", "Defendant");
+	shrub = createForm(&someRandomIntern, "shrubbery creation", "home");
+	robo = createForm(&someRandomIntern, "robotomy request", "borkenBot");
+	pardon = createForm(&someRandomIntern, "presidential pardon", "Defendant");
 
 	ft_title("Instances Info", '\n');
 	std::cout << bigBoss;
@@ -272,7 +272,7 @@ int main()
 	std::cout << *pardon;
 
 	ft_title("Presidential Pardon Form Signing", '\n');
-	signForm(pardon, bigBoss);
+	signForm(pardon, &bigBoss);
 
 	ft_title("Presidential Pardon Form Execution", '\n');
 	try
