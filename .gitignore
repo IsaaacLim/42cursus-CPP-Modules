@@ -43,9 +43,10 @@ bureaucrat
 *_shrubbery
 
 #Module06
-convert
-data
-base
+Modules/06/ex00/convert
+Modules/06/ex00/convert_tests
+Modules/06/ex01/data
+Modules/06/ex02/base
 
 #Module07
 whatever

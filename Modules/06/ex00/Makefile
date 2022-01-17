@@ -14,12 +14,16 @@ $(NAME) : $(OBJS)
 %.o : %.cpp Convert.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+test :
+	$(CXX) $(CXXFLAGS) main_tests.cpp Convert.cpp -o convert_tests
+
 clean :
 	rm -f $(OBJS)
 
 fclean : clean
 	rm -f $(NAME)
+	rm -f convert_tests
 
 re : fclean all
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re test
