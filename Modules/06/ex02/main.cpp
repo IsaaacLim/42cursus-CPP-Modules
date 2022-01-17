@@ -53,25 +53,22 @@ void identify(Base &p)
 	std::cout << "Identified as class\t: ";
 	try
 	{
-		A &tmp = dynamic_cast<A &>(p);
+		(void)dynamic_cast<A &>(p);
 		std::cout << "A\n";
-		(void)tmp;
 	}
 	catch (const std::exception &e)
 	{
 		try
 		{
-			B &tmp = dynamic_cast<B &>(p);
+			(void)dynamic_cast<B &>(p);
 			std::cout << "B\n";
-			(void)tmp;
 		}
 		catch (const std::exception &e)
 		{
 			try
 			{
-				C &tmp = dynamic_cast<C &>(p);
+				(void)dynamic_cast<C &>(p);
 				std::cout << "C\n";
-				(void)tmp;
 			}
 			catch (const std::exception &e)
 			{
