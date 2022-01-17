@@ -83,10 +83,11 @@ int main(void)
 	Base *ptr = generate();
 
 	std::cout << "\n";
-	identify(ptr);
-	identify(*ptr);
+	identify(ptr);	// identify through pointer
+	identify(*ptr); // identify through reference
 	delete ptr;
 
+	//Another syntax to generate an object reference
 	// Base &ref = *generate();
 	// identify(ref);
 	// delete &ref;
