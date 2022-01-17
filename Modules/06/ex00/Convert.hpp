@@ -40,8 +40,8 @@ private:
 	float _fValue;
 	double _dValue;
 
-	bool _isIntOverFlow = false;
-	bool _isNan = false;
+	bool _isIntOverFlow;
+	bool _isNan;
 
 public:
 	Convert(std::string const &literal);

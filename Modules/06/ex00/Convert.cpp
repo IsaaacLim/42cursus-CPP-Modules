@@ -1,6 +1,6 @@
 #include "Convert.hpp"
 
-Convert::Convert(std::string const &literal) : _input(literal)
+Convert::Convert(std::string const &literal) : _input(literal), _isIntOverFlow(false), _isNan(false)
 {
 	this->evaluateInput();
 	this->cast();
