@@ -5,7 +5,7 @@
 - Template functions
 - **Obj: Introduction**
 - Using scope-resolution operator (`::`) to call functions
-  - This just tells the compiler to look in the global namespace for the type/function, which prevents my `name` used to get clobbered by a new definition inside another namespace
+  - This just tells the compiler to look in the global namespace for the type/function, which prevents my `function name` used to get clobbered by a new definition inside another namespace
 
 ### ex01
 
