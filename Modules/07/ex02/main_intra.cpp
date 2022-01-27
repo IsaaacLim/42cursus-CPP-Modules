@@ -26,9 +26,10 @@ int main(int, char **)
 			std::cerr << "didn't save the same value!!" << std::endl;
 			return 1;
 		}
-		// else
-		// std::cout << mirror[i] << " ";
+		else
+			std::cout << mirror[i] << " ";
 	}
+	std::cout << '\n';
 	try
 	{
 		numbers[-2] = 0;
@@ -50,8 +51,8 @@ int main(int, char **)
 	{
 		numbers[i] = rand();
 	}
-	// std::cout << numbers[0] << "\n";
-	// std::cout << mirror[0] << "\n";
+	std::cout << numbers[0] << "\n";
+	std::cout << mirror[0] << "\n";
 	delete[] mirror; //
 	return 0;
 }

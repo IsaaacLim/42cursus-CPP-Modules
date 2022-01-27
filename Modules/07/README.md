@@ -34,4 +34,4 @@
   p4 = p1;      //Assignment operator
   ```
 
-- _Note: a `main.cpp` file was given in the intra. It's for ex02 but I don't think it's intended to be there. I've included a copy of this file in my repo under `main_intra.cpp`_
+- _Note: a `main.cpp` file was given in the intra. It's for ex02 but it wasn't explicitly mentioned that it needs to be used. I've included a copy of this file in my repo under `main_intra.cpp`_
