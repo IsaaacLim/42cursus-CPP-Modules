@@ -15,7 +15,7 @@ private:
 	unsigned int _size;
 
 public:
-	Array<T>(void) : _arr(new T()), _size(0) {}
+	Array<T>(void) : _arr(new T[0]), _size(0) {}
 	Array<T>(unsigned int n) : _size(n)
 	{
 		if ((int)n <= 0)
@@ -38,13 +38,7 @@ public:
 		for (unsigned int i = 0; i < this->_size; i++)
 			this->_arr[i] = other._arr[i];
 	}
-	~Array<T>(void)
-	{
-		if (_size > 0)
-			delete[] _arr;
-		else
-			delete _arr;
-	}
+	~Array<T>(void) { delete[] _arr; }
 
 	Array<T> &operator=(Array<T> const &rhs)
 	{
