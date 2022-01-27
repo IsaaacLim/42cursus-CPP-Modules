@@ -1,7 +1,7 @@
 #include "whatever.hpp"
 
-template <typename T, typename U>
-void ft_display(T const &x, U const &y, char var1, char var2)
+template <typename T>
+void ft_display(T const &x, T const &y, char var1, char var2)
 {
 	std::cout << "---- Display ----\n";
 	std::cout << var1 << " = " << x << ", " << var2 << " = " << y << std::endl;

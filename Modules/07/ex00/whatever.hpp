@@ -12,14 +12,14 @@ void swap(T &x, T &y)
 	std::cout << "   * Swapped *\n";
 }
 
-template <typename T, typename U>
-T const &max(T const &x, U const &y)
+template <typename T>
+T const &max(T const &x, T const &y)
 {
 	return (x > y ? x : y);
 }
 
-template <typename T, typename U>
-T const &min(T const &x, U const &y)
+template <typename T>
+T const &min(T const &x, T const &y)
 {
 	return (x < y ? x : y);
 }
