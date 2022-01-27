@@ -10,7 +10,8 @@ struct Data
 
 uintptr_t serialize(Data *ptr)
 {
-	return ((uintptr_t)ptr);
+	// return ((uintptr_t)ptr); // Implicit promotion
+	return (reinterpret_cast<uintptr_t>(ptr)); // Explicit promotion (project requirement)
 }
 
 Data *deserialize(uintptr_t raw)
