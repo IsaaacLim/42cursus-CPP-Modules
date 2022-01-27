@@ -94,8 +94,8 @@ void ft_test_double()
 	ft_test_instance("-DBL MIN", -DBL_MIN);
 	ft_test_instance("DBL MIN", DBL_MIN);
 	ft_test_instance("DBL MAX", DBL_MAX);
-	ft_test_instance("-DBL MAX - 1e303", -DBL_MAX - 1e303);
-	ft_test_instance("DBL MAX + 1e303", DBL_MAX + 1e303);
+	ft_test_instance("-DBL MAX - 1e303", (-DBL_MAX - 1e308));
+	ft_test_instance("DBL MAX + 1e303", (DBL_MAX + 1e308));
 }
 
 void ft_test_float()
@@ -105,8 +105,8 @@ void ft_test_float()
 	ft_test_instance("-FLT MIN", -FLT_MIN);
 	ft_test_instance("FLT MIN", FLT_MIN);
 	ft_test_instance("FLT MAX", FLT_MAX);
-	ft_test_instance("-FLT MAX - 1e33", -FLT_MAX - 1e33);
-	ft_test_instance("FLT MAX + 1e33", FLT_MAX + 1e33);
+	ft_test_instance("-FLT MAX - 1e33", (-FLT_MAX - 1e38));
+	ft_test_instance("FLT MAX + 1e33", (FLT_MAX + 1e38));
 }
 
 void ft_test_int()

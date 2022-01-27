@@ -40,7 +40,7 @@ private:
 	float _fValue;
 	double _dValue;
 
-	bool _isIntOverFlow;
+	bool _isOverFlow;
 	bool _isNan;
 
 public:
@@ -52,7 +52,7 @@ public:
 	int getIValue(void) const;
 	float getFValue(void) const;
 	double getDValue(void) const;
-	bool getIsIntOverFlow(void) const;
+	bool getIsOverFlow(void) const;
 	bool getIsNan(void) const;
 
 	//Libft functions

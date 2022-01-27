@@ -1,6 +1,6 @@
 #include "Convert.hpp"
 
-Convert::Convert(std::string const &literal) : _input(literal), _isIntOverFlow(false), _isNan(false)
+Convert::Convert(std::string const &literal) : _input(literal), _isOverFlow(false), _isNan(false)
 {
 	this->evaluateInput();
 	this->cast();
@@ -75,15 +75,19 @@ void Convert::evaluateInput(void)
 			ss >> long_int;
 			_iValue = static_cast<int>(long_int);
 			if (long_int < _iValue || long_int > _iValue)
-				_isIntOverFlow = true;
+				_isOverFlow = true;
 			break;
 		case eFloat:
 			ss >> long_double;
 			_fValue = static_cast<float>(long_double); //turns to inf if over limits
+			if (_fValue == std::numeric_limits<float>::infinity() || _fValue == -std::numeric_limits<float>::infinity())
+				_isOverFlow = true;
 			break;
 		case eDouble:
 			ss >> long_double;
 			_dValue = static_cast<double>(long_double); //turns to inf if over limits
+			if (_dValue == std::numeric_limits<double>::infinity() || _dValue == -std::numeric_limits<float>::infinity())
+				_isOverFlow = true;
 			break;
 		default:
 			break;
@@ -145,7 +149,7 @@ float Convert::getFValue(void) const { return this->_fValue; }
 
 double Convert::getDValue(void) const { return this->_dValue; }
 
-bool Convert::getIsIntOverFlow(void) const { return this->_isIntOverFlow; }
+bool Convert::getIsOverFlow(void) const { return this->_isOverFlow; }
 
 bool Convert::getIsNan(void) const { return this->_isNan; }
 
@@ -167,7 +171,7 @@ std::ostream &operator<<(std::ostream &out, Convert const &instance)
 		return out;
 	}
 	//Display int input overflow
-	if (instance.getIsIntOverFlow())
+	if (instance.getIsOverFlow())
 	{
 		out << "char\t: impossible\n";
 		out << "int\t: impossible\n";
