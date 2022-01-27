@@ -2,7 +2,7 @@
 #include <float.h> //FLT_MAX/MIN
 #include <climits> //CHAR_MAX/MIN
 #include <cmath>   //nan
-#include <string.h>
+#include <cstring>
 #include "Convert.hpp"
 
 /*
@@ -59,13 +59,33 @@ void ft_display_edges(void)
 	std::cout << "-nanf\t: " << -nanf("") << "\n\n";
 }
 
-void ft_test_instance(std::string test, long double num)
+void ft_test_instance_double(std::string test, long double num)
+{
+	std::stringstream ss;
+	std::string str;
+
+	std::cout << "--- " << test << " ---\n";
+	if (num == std::numeric_limits<double>::infinity())
+		ss << "1.797694e+308";
+	else if (num == -std::numeric_limits<double>::infinity())
+		ss << "-1.797694e+308";
+	else
+		ss << num;
+	ss >> str;
+	Convert instance(str.c_str());
+	std::cout << instance << std::endl;
+	// ss.str(std::string()); //needed if reusing strinstream in same function
+	// ss.clear();
+}
+
+void ft_test_instance_float(std::string test, long double num)
 {
 	std::stringstream ss;
 	std::string str;
 
 	std::cout << "--- " << test << " ---\n";
 	ss << num;
+	ss << "f";
 	ss >> str;
 	Convert instance(str.c_str());
 	std::cout << instance << std::endl;
@@ -90,23 +110,23 @@ void ft_test_instance_int(std::string test, long num)
 void ft_test_double()
 {
 	std::cout << "====== DOUBLE TESTS ======\n";
-	ft_test_instance("-DBL MAX", -DBL_MAX);
-	ft_test_instance("-DBL MIN", -DBL_MIN);
-	ft_test_instance("DBL MIN", DBL_MIN);
-	ft_test_instance("DBL MAX", DBL_MAX);
-	ft_test_instance("-DBL MAX - 1e303", (-DBL_MAX - 1e308));
-	ft_test_instance("DBL MAX + 1e303", (DBL_MAX + 1e308));
+	ft_test_instance_double("-DBL MAX", -DBL_MAX);
+	ft_test_instance_double("-DBL MIN", -DBL_MIN);
+	ft_test_instance_double("DBL MIN", DBL_MIN);
+	ft_test_instance_double("DBL MAX", DBL_MAX);
+	ft_test_instance_double("-DBL MAX - 1e303", -DBL_MAX - 1e303);
+	ft_test_instance_double("DBL MAX + 1e303", DBL_MAX + 1e303);
 }
 
 void ft_test_float()
 {
 	std::cout << "====== FLOAT TESTS ======\n";
-	ft_test_instance("-FLT MAX", -FLT_MAX);
-	ft_test_instance("-FLT MIN", -FLT_MIN);
-	ft_test_instance("FLT MIN", FLT_MIN);
-	ft_test_instance("FLT MAX", FLT_MAX);
-	ft_test_instance("-FLT MAX - 1e33", (-FLT_MAX - 1e38));
-	ft_test_instance("FLT MAX + 1e33", (FLT_MAX + 1e38));
+	ft_test_instance_float("-FLT MAX", -FLT_MAX);
+	ft_test_instance_float("-FLT MIN", -FLT_MIN);
+	ft_test_instance_float("FLT MIN", FLT_MIN);
+	ft_test_instance_float("FLT MAX", FLT_MAX);
+	ft_test_instance_float("-FLT MAX - 1e33", -FLT_MAX - 1e33);
+	ft_test_instance_float("FLT MAX + 1e33", FLT_MAX + 1e33);
 }
 
 void ft_test_int()
