@@ -32,6 +32,7 @@ void ft_findSpan(Span clone)
 		std::cerr << e.what() << '\n';
 	}
 }
+
 int main(int argc, char *argv[])
 {
 	//  ***** BASIC ********************************************************* //

@@ -20,7 +20,8 @@ public:
 	Span &operator=(Span const &rhs);
 
 	void addNumber(int newNum);
-	void addNumberRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	template <typename IT>
+	void addNumberRange(IT begin, IT end);
 	int shortestSpan(void);
 	int longestSpan(void);
 
@@ -37,5 +38,23 @@ public:
 		virtual const char *what() const throw();
 	};
 };
+
+template <typename IT>
+void Span::addNumberRange(IT begin, IT end)
+{
+	IT it;
+
+	for (it = begin; it != end; it++)
+	{
+		try
+		{
+			addNumber(*it);
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+}
 
 #endif
