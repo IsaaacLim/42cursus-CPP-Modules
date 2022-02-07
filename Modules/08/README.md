@@ -17,6 +17,7 @@
 - **Obj: Find the smallest and largest span within a container**
 - Iterators: passing iterators to copy container values
 - Algorithm: `min_element()`, `erase()`, `sort()`, `.end()[-1]`
+- *MacOS requires function template implementation in the header file*
 
 ### ex02
 
@@ -24,7 +25,7 @@
   - `main.cpp` & `Mutantstack.cpp` will be compiled separately first
   - In `main.cpp`, the compiler will _implicity_ instantiate the template class `MutantStack<int>` because those particular instantitations are used in `main.cpp`
   - In `MutantStack.cpp`, the compiler won't compile those instantiations because there are no implicit or explicit instantitations of `MutantStack<int>` (it doesn't exist in the header file or in `main.o`)
-  - <ins>The common method is to put all the implementation in the header file<ins>
+  - <ins>The common method is to put all the implementation in the header file<ins> *(Which is the only method when compiling in MacOS)*
 - (Con't above)If the separation is really required, **Explicitly instantiate the the template and its member definitions**
   - At the _end_ of `MutantStack.hpp`, add lines explicitly instantiating all the relevant templates, eg:
   ```

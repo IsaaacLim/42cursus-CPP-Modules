@@ -39,7 +39,7 @@ int main()
 	std::cout << "using iterator.rend()\t: " << itre[-1] << "\n";
 	*it = 100;
 	*(ite - 1) = 4200;
-	itrb[1] = 300; 
+	itrb[1] = 300;
 	itre[- 2] = 200;
 	std::cout << "new MutantStack\t\t: ";
 	while (it != ite)
@@ -69,6 +69,10 @@ int main()
 	strStack.push("is");
 	strStack.push("a");
 	strStack.push("string");
+	std::cout << BLUE "print with MutantStack's iterator\n" RESET;
+	for(MutantStack<std::string>::iterator it = strStack.begin(); it != strStack.end(); it++)
+		std::cout << *it << " ";
+	std::cout << BLUE "\nprint with Stack functions\n" RESET;
 	while (!strStack.empty())
 	{
 		std::cout << strStack.top() << "\n";
