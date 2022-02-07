@@ -5,8 +5,9 @@
 ### ex00
 
 - **Obj: Intro to STL**
-- Containers: `vector`, `list`, `deque`
+- Sequence Containers: `vector`, `list`, `deque`
   - `push_back()`, `push_front()`, `insert()`, `resize()`, `pop_back()`, `pop_front()`
+- Associative Contianers: `set`, `multiset`, `map`, `multimap`
 - Algorithm: `find()`, `distance`
 - Iterators
 - With template functions for STL
