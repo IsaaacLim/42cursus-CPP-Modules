@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 	ft_printArr(sp3);
 	ft_findSpan(sp3);
 
-	//***** ADDING w/ RANGE OF ITERATORS *************************************//
+	//***** ADDING w/ RANGE OF ITERATORS (List) ******************************//
 	Span sp4(5);
 	std::list<int> tmp2;
 
