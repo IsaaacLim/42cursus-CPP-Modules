@@ -79,20 +79,21 @@ int main(int argc, char *argv[])
 	srand(time(0));
 
 	ft_printTitle("Adding with Iterators", '\n');
-	generate(tmp.begin(), tmp.end(), rand); //randomly generate numbers
-	for (int i = 0; i < 20; i++)			//trim the numbers
+	generate(tmp.begin(), tmp.end(), rand); // randomly generate numbers
+	for (int i = 0; i < 20; i++)			// trim the numbers
 		tmp[i] %= 100;
 	sp3.addNumberRange(tmp.begin(), tmp.end());
 	ft_printArr(sp3);
 	ft_findSpan(sp3);
 
 	//***** ADDING w/ RANGE OF ITERATORS (List) ******************************//
-	Span sp4(5);
+	Span sp4(26);
 	std::list<int> tmp2;
 
 	ft_printTitle("Adding with Iterators (List)", '\n');
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 50; i += 2)
 		tmp2.push_back(i);
+	tmp2.push_back(49);
 	sp4.addNumberRange(tmp2.begin(), tmp2.end());
 	ft_printArr(sp4);
 	ft_findSpan(sp4);

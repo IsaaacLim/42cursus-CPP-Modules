@@ -26,18 +26,22 @@ void Span::addNumber(int newNum)
 
 int Span::shortestSpan(void)
 {
-	std::vector<int>::iterator min;
+	std::vector<int>::reverse_iterator itr;
 	std::vector<int> arrCopy;
-	int firstMin;
+	int smallest = -1;
 
 	if (_arr.size() < 2)
 		throw NoSpanException();
 	arrCopy = _arr;
-	min = std::min_element(arrCopy.begin(), arrCopy.end());
-	firstMin = *min;
-	arrCopy.erase(min);
-	min = std::min_element(arrCopy.begin(), arrCopy.end());
-	return (*min - firstMin);
+	std::sort(arrCopy.begin(), arrCopy.end());
+	for (itr = arrCopy.rbegin(); itr != arrCopy.rend(); itr++)
+	{
+		if ((itr + 1) == arrCopy.rend())
+			break;
+		if ((smallest == -1) || (*itr - *(itr + 1) < smallest))
+			smallest = (*itr - *(itr + 1));
+	}
+	return (smallest);
 }
 
 /*
@@ -56,7 +60,7 @@ int Span::longestSpan(void)
 	arrCopy = _arr;
 	sort(arrCopy.begin(), arrCopy.end());
 	smallest = arrCopy.begin()[0];
-	biggest = arrCopy.end()[-1]; //end() is past the last element, -1 for last
+	biggest = arrCopy.end()[-1]; // end() is past the last element, -1 for last
 	return (biggest - smallest);
 }
 
