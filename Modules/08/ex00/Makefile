@@ -1,21 +1,15 @@
 NAME		=	easyfind
 
-SRCS		=	main.cpp
-OBJS		=	$(SRCS:.cpp=.o)
-
 CXX			=	c++	
 CXXFLAGS	=	-std=c++98 -pedantic-errors -Wall -Wextra -Werror -g
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : main.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o : %.cpp easyfind.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
 clean :
-	rm -f $(OBJS)
+	@echo "No object file to remove"
 
 fclean : clean
 	rm -f $(NAME)

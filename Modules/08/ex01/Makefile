@@ -12,7 +12,7 @@ $(NAME) : $(SRCS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean :
-	@echo "No object files to remove"
+	@echo "No object file to remove"
 
 fclean : clean
 	rm -f $(NAME)

@@ -8,14 +8,11 @@ CXXFLAGS	=	-std=c++98 -pedantic-errors -Wall -Wextra -Werror -g
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(SRCS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o : %.cpp Mutantstack.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
 clean :
-	rm -f $(OBJS)
+	@echo "No object file to remove"
 
 fclean : clean
 	rm -f $(NAME)
