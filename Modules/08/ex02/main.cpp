@@ -33,15 +33,15 @@ int main()
 	MutantStack<int>::iterator ite = mStack.end();
 	MutantStack<int>::reverse_iterator itrb = mStack.rbegin();
 	MutantStack<int>::reverse_iterator itre = mStack.rend();
-	std::cout << "using iterator.begin()\t: " << *it << "\n";
-	std::cout << "using iterator.end()\t: " << *(ite - 1) << "\n";
-	std::cout << "using iterator.rbegin()\t: " << *(itrb + 2) << "\n";
-	std::cout << "using iterator.rend()\t: " << itre[-1] << "\n";
+	std::cout << "*(iterator.begin())\t: " << *it << "\n";
+	std::cout << "*(iterator.end() - 1)\t: " << *(ite - 1) << "\n";
+	std::cout << "*(iterator.rbegin() + 2): " << *(itrb + 2) << "\n";
+	std::cout << "iterator.rend()[-1]\t: " << itre[-1] << "\n";
 	*it = 100;
 	*(ite - 1) = 4200;
 	itrb[1] = 300;
-	itre[- 2] = 200;
-	std::cout << "new MutantStack\t\t: ";
+	itre[-2] = 200;
+	std::cout << "mod MutantStack\t\t: ";
 	while (it != ite)
 	{
 		std::cout << *it << " ";
@@ -51,14 +51,14 @@ int main()
 
 	std::cout << BLUE "\nCopy Constructor\n" RESET;
 	MutantStack<int> mStack2(mStack);
-	for(MutantStack<int>::iterator it = mStack2.begin(); it != mStack2.end(); it++)
+	for (MutantStack<int>::iterator it = mStack2.begin(); it != mStack2.end(); it++)
 		std::cout << *it << " ";
 	std::cout << "\n";
 
 	std::cout << BLUE "\nAssignment Operator\n" RESET;
 	MutantStack<int> mStack3;
 	mStack3 = mStack;
-	for(MutantStack<int>::iterator it = mStack3.begin(); it != mStack3.end(); it++)
+	for (MutantStack<int>::iterator it = mStack3.begin(); it != mStack3.end(); it++)
 		std::cout << *it << " ";
 	std::cout << "\n";
 
@@ -70,7 +70,7 @@ int main()
 	strStack.push("a");
 	strStack.push("string");
 	std::cout << BLUE "print with MutantStack's iterator\n" RESET;
-	for(MutantStack<std::string>::iterator it = strStack.begin(); it != strStack.end(); it++)
+	for (MutantStack<std::string>::iterator it = strStack.begin(); it != strStack.end(); it++)
 		std::cout << *it << " ";
 	std::cout << BLUE "\nprint with Stack functions\n" RESET;
 	while (!strStack.empty())
@@ -98,7 +98,7 @@ int main()
 	boolStack.push(1);
 	boolStack.push(2);
 	boolStack.push(-1);
-	for(MutantStack<bool>::iterator it = boolStack.begin(); it != boolStack.end(); it++)
+	for (MutantStack<bool>::iterator it = boolStack.begin(); it != boolStack.end(); it++)
 		std::cout << std::boolalpha << *it << " ";
 	std::cout << "\n\n";
 }
