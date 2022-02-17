@@ -67,17 +67,17 @@ void ft_print(std::multimap<T, U> array)
 // -----------------------------------------------------------------------------
 int main(void)
 {
-	{ //Vector
+	{ // Vector
 		std::vector<int> vector_arr;
 		std::vector<int>::iterator it;
 
 		print_title("VECTOR");
 		for (int i = 0; i < 10; i++)
 			vector_arr.push_back(i);
-		vector_arr.resize(15, 42); //fill 10th-14th with 42
-		vector_arr.resize(20);	   //fill 15th-19th with 0
+		vector_arr.resize(15, 42); // fill 10th-14th with 42
+		vector_arr.resize(20);	   // fill 15th-19th with 0
 		it = vector_arr.begin();
-		vector_arr.insert(it + 2, 2, 200); //fill 2nd&3rd with 200
+		vector_arr.insert(it + 2, 2, 200); // fill 2nd&3rd with 200
 		ft_print(vector_arr);
 		ft_tryFind(vector_arr, 5);
 		ft_tryFind(vector_arr, 6);
@@ -85,7 +85,7 @@ int main(void)
 		ft_tryFind(vector_arr, 31);
 		std::cout << std::endl;
 	}
-	{ //List
+	{ // List
 		std::list<int> list_arr;
 		std::list<int>::iterator it;
 
@@ -101,7 +101,7 @@ int main(void)
 		ft_tryFind(list_arr, -10);
 		std::cout << std::endl;
 	}
-	{ //Deque
+	{ // Deque
 		std::deque<int> deque_arr;
 
 		print_title("DEQUE");
@@ -149,7 +149,7 @@ int main(void)
 		print_title("MAP");
 		for (int i = 0; i < 10; i++)
 			map_arr[97 + i] = i * 10;
-		map_arr.insert(std::pair<char, int>('b', 90) );
+		map_arr.insert(std::pair<char, int>('b', 90));
 		ft_print(map_arr);
 		ft_tryFind(map_arr, 10);
 		ft_tryFind(map_arr, 90);
@@ -161,8 +161,8 @@ int main(void)
 
 		print_title("MULTIMAP");
 		for (int i = 0; i < 10; i++)
-			multimap_arr.insert(std::pair<char, int>(97 + i, i * 10) );
-		multimap_arr.insert(std::pair<char, int>('b', 90) );
+			multimap_arr.insert(std::pair<char, int>(97 + i, i * 10));
+		multimap_arr.insert(std::pair<char, int>('b', 90));
 		ft_print(multimap_arr);
 		ft_tryFind(multimap_arr, 10);
 		ft_tryFind(multimap_arr, 90);
