@@ -9,7 +9,7 @@
 ### ex01
 
 - Function overload
-- Fixed point nummbers
+- Fixed point numbers
   - They are data types with a specific number of digits reserved for the interger part and fractional part
   - eg: fixed point format of `IIIII.FFFFF` can represent max of `99999.99999` & smallest of `00000.00001`
   - I guess the purpose is to save memory when we know how accurate we want our data to be
